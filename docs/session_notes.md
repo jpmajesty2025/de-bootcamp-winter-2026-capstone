@@ -486,5 +486,7 @@ Define a **Protected Core Scope** that must survive any scope cut before 2026-03
 - **Checkpoint commit created:** `44e1960` — scaffolded `src/` pipeline files (`00_setup_env.py`, `01_ingest_cdc_places.py`, `02_ingest_census_acs.py`, `config.py`) and synced progress docs.
 - **Next step:** run-validate A1/A2 in Databricks by uploading sample CDC/ACS raw files to configured DBFS paths and executing setup + ingestion scripts.
 - **Runbook update completed:** expanded `README.md` with A1/A2 Databricks validation instructions (repo structure, run order, target bronze tables, and config override note).
+- **Bronze validation script added:** created `src/03_validate_bronze.py` to verify both bronze tables exist, have non-zero rows, and contain non-null ingestion metadata (`ingestion_ts`, `source_path`, `source_system`).
+- **Run order updated:** `README.md` now includes `src/03_validate_bronze.py` after CDC/ACS ingestion scripts.
 
 

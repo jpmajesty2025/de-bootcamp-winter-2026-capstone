@@ -19,9 +19,11 @@ Workstream A — Data Pipeline (A1/A2): validate Bronze ingestion for CDC PLACES
    1. `src/00_setup_env.py`
    2. `src/01_ingest_cdc_places.py`
    3. `src/02_ingest_census_acs.py`
+   4. `src/03_validate_bronze.py`
 4. Validate table writes:
    - `main.health_equity_capstone.bronze_cdc_places`
    - `main.health_equity_capstone.bronze_census_acs`
+   - validation output shows non-zero rows and no null ingestion metadata
 
 ## Notes
 - If catalog/schema/path differs in your workspace, update `src/config.py` before running.
