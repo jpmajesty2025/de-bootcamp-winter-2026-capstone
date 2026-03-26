@@ -75,9 +75,19 @@ If time permits post-MVP, add Neo4j nodes/relationships:
 - **Databricks Workspace** (bootcamp-provided)
 - **Storage:** Delta Lake on **S3**
 - **Transform/Orchestration:** Databricks Jobs / DLT expectations
-- **Agent Layer:** Databricks notebook/function orchestration + vector retrieval
 - **Visualization:** Databricks SQL Dashboard
+- **Agent Layer (MVP):**
+  - **Structured analytics lane:** Databricks **Genie** for text→SQL over governed Gold tables.
+  - **Document evidence lane:** citation-grounded retrieval over the 5 locked CDC/WHO collections (chunking + embeddings + retrieval orchestration in Databricks notebooks/functions).
 - **LLMOps:** MLflow tracking + evaluation (`mlflow.evaluate()`), prompt/version tracking in MLflow/Unity Catalog
+
+### Agentic Implementation Boundary (Explicit)
+- **Yes in MVP:** two-lane pattern
+  1. Genie text→SQL for structured, dashboard-consistent analytical questions.
+  2. Citation-grounded document retrieval workflow for CDC/WHO evidence-backed recommendations.
+- **Not in MVP core:** Agent Bricks Knowledge Assistant, Supervisor Agent patterns, and custom multi-agent orchestration via LangChain/LangGraph.
+- **Why:** protects 2026-03-28 reliability deadline and keeps architecture aligned to capstone DE-first grading priorities.
+- **Phase 2 path:** evaluate Agent Bricks / Agent Framework and optional multi-agent orchestration only after protected-core MVP is stable.
 
 ### Data Sources (Locked MVP Corpus + Structured Base)
 1. **CDC PLACES** (structured, county-level chronic disease indicators)  
