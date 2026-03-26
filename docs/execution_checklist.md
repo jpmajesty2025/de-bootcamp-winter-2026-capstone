@@ -44,8 +44,8 @@
 
 | ID | Task | Priority | Status | Owner | Estimate | Depends On | Done Criteria |
 |---|---|---|---|---|---|---|---|
-| A1 | CDC PLACES Bronze ingestion operational | P0 | NS | You | 1–2h | None | Raw ingest runs successfully with ingestion metadata |
-| A2 | ACS Bronze ingestion operational | P0 | NS | You | 1–2h | None | Raw ingest runs successfully with ingestion metadata |
+| A1 | CDC PLACES Bronze ingestion operational | P0 | IP | You | 1–2h | None | Raw ingest runs successfully with ingestion metadata |
+| A2 | ACS Bronze ingestion operational | P0 | IP | You | 1–2h | None | Raw ingest runs successfully with ingestion metadata |
 | A3 | Silver conformance (FIPS/schema/date normalization) | P0 | NS | You | 2–3h | A1, A2 | Conformed Silver tables queryable and keyed consistently |
 | A4 | Gold fact tables (county burden + SDOH joins) | P0 | NS | You | 2–3h | A3 | Gold marts populated and dashboard-ready |
 | A5 | Data quality checks (schema/null/unique/range/ref/freshness) | P0 | NS | You | 2h | A3, A4 | DQ checks pass or exceptions documented with rationale |

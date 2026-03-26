@@ -465,3 +465,23 @@ Define a **Protected Core Scope** that must survive any scope cut before 2026-03
 
 **Implementation implication:** Execution planning now optimizes for protected-core completion first, with all stretch work explicitly deprioritized until after MVP stability is confirmed.
 
+---
+
+## Execution Progress Log *(2026-03-26)*
+
+- **Timeline reset confirmed:** execution starts from Workstream A (Data Pipeline), all tasks at NS at start of day.
+- **Agentic boundary clarified and locked in docs:**
+  - Structured lane: Databricks Genie (text→SQL over Gold tables)
+  - Document lane: Agent Bricks Knowledge Assistant (primary) with notebook/vector fallback
+- **Pipeline scaffold progress:**
+  - Verified existing `src/00_setup_env.py` (catalog/schema + Bronze table constants)
+  - Verified existing `src/01_ingest_cdc_places.py` (CDC Bronze ingest scaffold with ingestion metadata)
+  - Created `src/02_ingest_census_acs.py` (ACS Bronze ingest scaffold with ingestion metadata)
+- **Current focus:** continue Workstream A by wiring real source paths/config and preparing Databricks run validation for A1/A2.
+- **Config centralization completed:**
+  - Created `src/config.py` for shared catalog/schema, Bronze table names, and source paths.
+  - Updated `src/01_ingest_cdc_places.py` to import table/path settings from `config.py`.
+  - Updated `src/02_ingest_census_acs.py` to import table/path settings from `config.py`.
+- **Checklist tracking updated:** A1 and A2 moved from `NS` to `IP` in `docs/execution_checklist.md` pending Databricks run validation.
+
+
