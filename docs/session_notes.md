@@ -187,3 +187,281 @@ The capstone pipeline has two outputs: (1) **Analytics dashboard** — structure
 | ~2026-02-22 | Vibe Coding bootcamp brainstorm → VitalDocs AI proposal created (`PROPOSAL.md`) |
 | 2026-03-13 AM | Multi-hour session: reviewed all docs, developed 3-tier plan, was about to draft proposal — lost to API timeout |
 | 2026-03-13 PM | Session recovery. Read all available docs. Reconstructed context. Identified 5 missing clarifying Q&A. User confirmed: update session notes after every exchange. |
+
+---
+
+## Planning Resumption Questions *(2026-03-25)*
+
+In light of `docs/de_capstone_proposal_draft_1.md` and `docs/resumption_of_planning.md`, these are the 10 questions to finalize scope and execution.
+
+### Critical decisions
+1. **Primary demo experience:** Should the capstone front door be Dashboard-first (gold tables + BI) or Agent-first (chat/Genie + tools), with the other secondary?
+2. **Graph RAG direction:** Keep Neo4j Graph RAG as core scope, or pivot to a Databricks-native supervisor pattern (Genie + Knowledge Assistant) and treat graph as Phase 2?
+3. **RAG corpus scope:** Which exact 3–5 CDC/WHO document collections are in MVP scope?
+4. **Deployment target:** DAB-based deployment (production-grade) or notebook/manual deployment (faster, lower risk) for submission?
+
+### Execution constraints
+5. **Deadline + grading emphasis:** For evaluation, what matters most—architecture completeness, demo polish, or measurable LLM eval quality?
+6. **Workspace limits:** Any constraints on Databricks compute, serving endpoints, Vector Search, or external services?
+7. **Freshness expectations:** Is batch-only ingestion acceptable for MVP, with streaming/Kafka-DLT as future extension?
+
+### Success criteria
+8. **Must-answer demo questions:** What are the top 3 user questions the system must answer reliably?
+9. **Agent quality bar:** Do we require explicit eval thresholds (e.g., groundedness/faithfulness), or a qualitative rubric only?
+10. **Scope guardrails:** If we cut 20–30% scope, which features are non-negotiable?
+
+**Status:** Q1–Q9 decided (below). Q10 pending; once answered, produce finalized implementation plan and execution timeline.
+
+### Q1 Decision Memo *(2026-03-25)*
+**Question:** Should the capstone primary demo be Dashboard-first or Agent-first?
+
+**Context:** This is a Data Engineering bootcamp with a Databricks-first expectation. Agentic workflow is required, but not the core instructional focus.
+
+**Options considered:**
+- **Dashboard-first (Agent secondary):**
+  - **Pros:** Strongest alignment to DE grading criteria (medallion outputs, joins, data quality, gold-layer analytics), lower live-demo risk, clearer stakeholder value for health equity.
+  - **Cons:** Less “AI wow” if agent integration is weak.
+- **Agent-first (Dashboard secondary):**
+  - **Pros:** Strong Week 5 AI narrative, compelling conversational UX, clear product-forward story.
+  - **Cons:** Higher demo fragility and risk of under-emphasizing DE rigor.
+
+**Final recommendation (accepted):**
+- **Choose Dashboard-first as primary demo spine.**
+- **Include agentic workflow as a required, prominent secondary layer** (not optional), demonstrating natural-language Q&A with citations over the same governed data foundation.
+
+**Narrative to use in proposal/demo:**
+> “Trusted data engineering foundation first, intelligent access second.  
+> We built reliable Databricks medallion pipelines and analytics outputs, then added an agentic interface to make those insights conversational and evidence-backed.”
+
+**Implementation implication:** All milestone planning should optimize first for DE reliability/completeness, while ensuring agentic action is clearly implemented and demonstrable for capstone requirements.
+
+### Q2 Decision Memo *(2026-03-25)*
+**Question:** Should Neo4j Graph RAG remain core MVP scope, or move to Phase 2?
+
+**Decision (accepted):**
+- **Move Graph RAG to Phase 2** (post-MVP scope) due to time constraints.
+- Keep MVP focused on Databricks-native DE deliverables + required agentic workflow.
+
+**Rationale:**
+- Current date is **2026-03-25** with due date **2026-03-29**.
+- Team target is **fully deployed, running MVP by 2026-03-28**, reserving **2026-03-29** for polish and selective low-hanging enhancements.
+- Graph RAG adds significant integration and evaluation overhead that increases delivery risk under current timeline.
+
+**Timeline lock:**
+- **MVP functional deadline:** 2026-03-28
+- **Polish/buffer day:** 2026-03-29
+- **Graph RAG:** explicitly deferred to Phase 2 / stretch work only if schedule permits after MVP hardening.
+
+**Implementation implication:** Planning should prioritize deterministic pipeline reliability, gold-layer dashboard quality, and a clear/working agentic action path before any graph expansion.
+
+### Q3 Decision Memo *(2026-03-25)*
+**Question:** Which exact 3–5 CDC/WHO document collections are in MVP scope?
+
+**Decision (accepted):**
+- **Adopt Option B (5 collections)** as the MVP RAG corpus scope.
+
+**Confirmed collections (verified available):**
+1. **CDC Advancing Health Equity Collection**  
+   - Primary: https://www.cdc.gov/pcd/collections/Advancing_Health_Collection.htm  
+   - Fallback PDF: https://www.cdc.gov/pcd/collections/pdf/health-disparities-collection_508.pdf
+2. **CDC Mapping Chronic Disease Collection**  
+   - Primary: https://www.cdc.gov/pcd/collections/Mapping_Chronic_Disease.htm  
+   - Fallback PDF: https://www.cdc.gov/pcd/collections/pdf/gis_collection.pdf
+3. **CDC Rural Health Disparities (2025)**  
+   - Primary: https://www.cdc.gov/pcd/issues/2025/25_0202.htm  
+   - Fallback PDF: https://www.cdc.gov/pcd/issues/2025/pdf/25_0202.pdf
+4. **CDC Health Equity Science / SDOH Documentation**  
+   - Primary: https://www.cdc.gov/health-equity-chronic-disease/hcp/health-equity-science/index.html  
+   - Fallback PDF: https://www.cdc.gov/cardiovascular-resources/media/pdfs/surveillance_evaluation_guide-508.pdf
+5. **WHO World Health Statistics 2025**  
+   - Primary: https://www.who.int/publications/b/78420  
+   - Fallback direct PDF: https://iris.who.int/server/api/core/bitstreams/c992fbdc-11ef-43db-a478-7e7a195403ae/content
+
+**Availability confirmation:** All five primary sources were validated as currently accessible.
+
+**Implementation implication:** Start ingestion with stable consolidated PDFs first (WHO + CDC collection PDFs), then layer web-first pages with PDF fallbacks to reduce delivery risk before 2026-03-28.
+
+### Q4 Decision Memo *(2026-03-25)*
+**Question:** Should deployment target be DAB-based now, or notebook/manual first?
+
+**Decision (accepted):**
+- **Use notebook/manual Databricks deployment for MVP (by 2026-03-28).**
+- **Treat DAB as post-MVP hardening** for 2026-03-29 (time permitting) or immediate next iteration.
+
+**Clarification:**
+- Notebook/manual deployment in Databricks **still satisfies “deployed in the cloud”** for capstone requirements.
+- DAB is an advanced packaging/deployment workflow introduced in Week 5, valuable but not required to prove cloud deployment.
+
+**Transition difficulty (manual → DAB):**
+- **Moderate but manageable** if MVP is structured cleanly.
+- Expected effort is low-friction when assets are already organized (jobs/pipelines/notebooks, parameters, env-specific configs).
+
+**Low-friction migration path:**
+1. Keep notebooks modular by layer/use case (bronze, silver, gold, rag_ingest, eval).
+2. Centralize parameters (catalog/schema, paths, table names) instead of hardcoding.
+3. Capture execution order as jobs/workflows in Databricks.
+4. Add DAB scaffolding after MVP to package same assets and promote across environments.
+
+**Implementation implication:** Prioritize reliable cloud-running MVP first; add DAB only after core functionality, demo flow, and validation checks are stable.
+
+### Q5 Decision Memo *(2026-03-25)*
+**Question:** For grading and execution, what should be prioritized: architecture completeness, demo polish, or LLM eval depth?
+
+**Decision (accepted):**
+- Prioritize in this order:
+  1. **Architecture completeness** (must meet and modestly exceed minimum requirements)
+  2. **Demo polish** (clear, credible, stakeholder-friendly)
+  3. **LLM eval depth** (lean MVP set now; deeper robustness later)
+
+**Rationale:**
+- Timeline is constrained (MVP running by 2026-03-28, polish on 2026-03-29).
+- Strong DE fundamentals and a reliable demo are the highest-value grading and delivery levers.
+- LLM evaluation remains required, but should be right-sized for schedule.
+
+**Lean MVP LLM eval plan (in scope):**
+1. Build a **small gold eval set (15–25 questions)**:
+   - factual lookup,
+   - synthesis/comparison,
+   - county/equity interpretation,
+   - optional out-of-scope checks.
+2. Score 3 core quality dimensions:
+   - **Groundedness/Faithfulness** (supported by retrieved context),
+   - **Citation correctness** (source exists and is relevant),
+   - **Answer relevance** (answers the asked question).
+3. Track minimal operational metrics:
+   - latency,
+   - failure/error rate,
+   - token/cost if easy to capture.
+4. Run at least one simple baseline comparison (e.g., top-k or prompt version), logged in MLflow.
+
+**MVP acceptance thresholds (target):**
+- Groundedness/Faithfulness: **>= 80%**
+- Citation correctness: **>= 85%**
+- Relevance: **>= 80%**
+- Failure rate: **< 10%**
+- Latency: acceptable demo responsiveness (practical target: p95 under ~10–15s)
+
+**Phase-2 hardening (deferred):**
+- Larger eval set,
+- richer retrieval metrics (precision@k/context recall),
+- stronger comparative experiments,
+- expanded tracing/monitoring and alerting.
+
+### Q6 Decision Memo *(2026-03-25)*
+**Question:** Are there known Databricks workspace constraints (compute/model/vector/external access) that affect scope?
+
+**Decision (accepted):**
+- **No known workspace constraints at this time.**
+- Proceed with standard bootcamp workspace assumptions and right-sized resource usage.
+
+**Rationale:**
+- No explicit limits were communicated during bootcamp.
+- Planned MVP workload is moderate (not large-scale or unusually compute-intensive).
+- Current scope is practical for capstone scale and timeline.
+
+**Operational assumption:**
+- Use conservative/default cluster sizing and avoid over-provisioning.
+- If an unexpected quota/permission limit appears, treat as execution risk and pivot to lower-cost fallback settings (smaller batches, fewer docs per run, reduced concurrency).
+
+**Implementation implication:** Continue planning as unconstrained-by-default, while keeping lightweight fallback knobs ready to preserve the 2026-03-28 MVP deadline.
+
+### Q7 Decision Memo *(2026-03-25)*
+**Question:** Is batch-only ingestion acceptable for MVP, with streaming/Kafka-DLT deferred?
+
+**Decision (accepted):**
+- **Yes — batch-only ingestion is acceptable for MVP.**
+- **Streaming capabilities are explicitly deferred** to a later iteration.
+
+**Rationale:**
+- Current sources and use case do not require real-time latency.
+- Streaming would add complexity without clear MVP value.
+- Deferring streaming protects timeline and increases likelihood of a stable deployed MVP by 2026-03-28.
+
+**Implementation implication:** Build and harden scheduled batch ingestion/orchestration now; document streaming as a future enhancement path, not MVP scope.
+
+### Q8 Decision Memo *(2026-03-25)*
+**Question:** What are the top 3 demo questions the system must answer reliably?
+
+**Decision (accepted):**
+Use the following 3-question demo set:
+1. **“Which counties show the worst diabetes burden, and what social factors are most associated with those outcomes?”**
+2. **“Compare rural vs urban patterns for obesity and heart disease in [state/region], and explain likely drivers.”**
+3. **“Given these disparities, what evidence-based interventions do CDC/WHO sources recommend for similar communities?”**
+
+**Why this set:**
+- Covers structured joins and gold-layer analytics (PLACES + ACS),
+- demonstrates health equity framing and segmentation,
+- proves required agentic workflow with cited unstructured evidence.
+
+**Reliability evaluation protocol (MVP):**
+1. For each demo question, create **1 canonical prompt + 2 paraphrases** (9 prompts total).
+2. Run each prompt **at least twice** (18 total responses) to test consistency.
+3. Score each response on:
+   - **Relevance** (answers the actual question),
+   - **Groundedness/Faithfulness** (supported by retrieved context),
+   - **Citation correctness** (real, relevant source support),
+   - **Data consistency** (matches dashboard/gold-table values).
+
+**Pass criteria (MVP):**
+- **>= 80% pass rate per demo question** across variants/reruns,
+- **>= 85% citation correctness** overall,
+- **0 fabricated citations** for demo questions,
+- **No major contradictions** with dashboard metrics.
+
+**Implementation implication:** Demo readiness is defined by measurable reliability on these 3 stakeholder questions, not only by successful one-off responses.
+
+### Q9 Decision Memo *(2026-03-25)*
+**Question:** Should agent quality be evaluated with explicit numeric thresholds, qualitative rubric, or both?
+
+**Decision (accepted):**
+- Use a **hybrid quality model**:
+  1. **Numeric thresholds** as internal acceptance gates for MVP readiness.
+  2. **Qualitative rubric** for final demo/readability and evaluator-facing quality judgment.
+
+**Where numeric thresholds are already defined:**
+- In **Q5 Decision Memo** (overall MVP eval targets).
+- In **Q8 Decision Memo** (demo-question reliability protocol).
+
+**Numeric quality checks (MVP):**
+- Groundedness/Faithfulness: **>= 80%**
+- Citation correctness: **>= 85%**
+- Relevance: **>= 80%**
+- Failure rate: **< 10%**
+- Latency: **p95 under ~10–15s** (practical target)
+- Demo reliability: **>= 80% pass per demo question** across variants/reruns; **0 fabricated citations**; no major dashboard contradictions
+
+**Qualitative quality checks (MVP):**
+1. **Abstention behavior:** Clearly indicates insufficient evidence when retrieval context is weak.
+2. **Citation usability:** Sources are specific and human-verifiable.
+3. **Analyst readability:** Response is concise, structured, and decision-useful.
+4. **Data consistency narrative:** Textual conclusions align with dashboard/gold metrics.
+5. **Transparency:** Assumptions/limitations are stated when applicable.
+
+**Implementation implication:** Treat numeric thresholds as go/no-go release criteria, and qualitative rubric as presentation and trustworthiness criteria for capstone review.
+
+### Q10 Decision Memo *(2026-03-25)*
+**Question:** If we cut 20–30% scope, which features are non-negotiable?
+
+**Decision (accepted):**
+Define a **Protected Core Scope** that must survive any scope cut before 2026-03-28:
+1. **Running medallion pipeline (Bronze/Silver/Gold)** for core structured sources (**CDC PLACES + Census ACS**) with documented data quality checks.
+2. **Gold-layer dashboard** that reliably answers the analytics demo questions (county burden + social determinant interpretation).
+3. **Agentic workflow with citations** over the locked 5-collection CDC/WHO corpus, capable of answering intervention/evidence questions.
+4. **Lean MVP evaluation gate** (15–25 gold questions + numeric pass thresholds from Q5/Q8/Q9).
+5. **Cloud-running deployment + runbook** (manual/notebook deployment acceptable for MVP).
+
+**First items to cut/defer if schedule compresses:**
+- DAB packaging and environment promotion automation.
+- Expanded eval depth beyond lean MVP metrics.
+- Corpus expansion beyond the 5 locked collections.
+- Extra UX polish/integration beyond required dashboard + working agent path.
+- Any Graph RAG and streaming work (already Phase 2).
+
+**Minimum “done” definition under constrained scope:**
+- End-to-end pipeline runs in Databricks.
+- Gold tables + dashboard are demo-ready and internally consistent.
+- Agent answers the 3 required demo questions with verifiable citations at target quality bars.
+- Evaluation results are captured and presentable.
+
+**Implementation implication:** Execution planning now optimizes for protected-core completion first, with all stretch work explicitly deprioritized until after MVP stability is confirmed.
+
