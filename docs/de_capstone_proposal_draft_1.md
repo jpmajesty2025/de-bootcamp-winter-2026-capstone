@@ -78,16 +78,18 @@ If time permits post-MVP, add Neo4j nodes/relationships:
 - **Visualization:** Databricks SQL Dashboard
 - **Agent Layer (MVP):**
   - **Structured analytics lane:** Databricks **Genie** for text→SQL over governed Gold tables.
-  - **Document evidence lane:** citation-grounded retrieval over the 5 locked CDC/WHO collections (chunking + embeddings + retrieval orchestration in Databricks notebooks/functions).
+  - **Document evidence lane (primary):** Databricks **Agent Bricks Knowledge Assistant** over the 5 locked CDC/WHO collections (docs landed to Unity Catalog Volume; managed chunking/embedding/index/serving with citations and guardrails).
+  - **Document evidence lane (fallback):** notebook-based retrieval orchestration over Vector Search if Agent Bricks is temporarily unavailable in workspace.
 - **LLMOps:** MLflow tracking + evaluation (`mlflow.evaluate()`), prompt/version tracking in MLflow/Unity Catalog
 
 ### Agentic Implementation Boundary (Explicit)
 - **Yes in MVP:** two-lane pattern
   1. Genie text→SQL for structured, dashboard-consistent analytical questions.
-  2. Citation-grounded document retrieval workflow for CDC/WHO evidence-backed recommendations.
-- **Not in MVP core:** Agent Bricks Knowledge Assistant, Supervisor Agent patterns, and custom multi-agent orchestration via LangChain/LangGraph.
-- **Why:** protects 2026-03-28 reliability deadline and keeps architecture aligned to capstone DE-first grading priorities.
-- **Phase 2 path:** evaluate Agent Bricks / Agent Framework and optional multi-agent orchestration only after protected-core MVP is stable.
+  2. Agent Bricks Knowledge Assistant for citation-grounded CDC/WHO evidence-backed recommendations.
+- **Not in MVP core:** Supervisor Agent patterns and custom multi-agent orchestration via LangChain/LangGraph.
+- **Why:** protects 2026-03-28 reliability deadline and keeps architecture aligned to DE-first capstone grading priorities while using Databricks-managed agentic capabilities.
+- **Fallback path:** if Agent Bricks is blocked by workspace constraints, use notebook-based citation RAG over Vector Search to preserve MVP timeline.
+- **Phase 2 path:** evaluate Agent Framework and optional multi-agent orchestration only after protected-core MVP is stable.
 
 ### Data Sources (Locked MVP Corpus + Structured Base)
 1. **CDC PLACES** (structured, county-level chronic disease indicators)  

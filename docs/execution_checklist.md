@@ -27,14 +27,14 @@
 
 **In MVP (yes):**
 1. **Structured analytics lane:** Databricks **Genie** for text→SQL over governed Gold tables.
-2. **Document evidence lane:** citation-grounded retrieval over the locked 5 CDC/WHO collections (chunking + embeddings + retrieval orchestration in Databricks notebooks/functions).
+2. **Document evidence lane (primary):** Databricks **Agent Bricks Knowledge Assistant** over the locked 5 CDC/WHO collections (docs landed to UC Volume, managed citations/guardrails).
+3. **Document evidence lane (fallback):** notebook-based citation RAG over Vector Search if Agent Bricks is temporarily unavailable.
 
 **Not in MVP core (defer):**
-- Agent Bricks Knowledge Assistant
 - Supervisor Agent patterns
 - Custom multi-agent orchestration via LangChain/LangGraph
 
-**Why:** protect 2026-03-28 MVP reliability and keep execution aligned to DE-first capstone grading.
+**Why:** protect 2026-03-28 MVP reliability and keep execution aligned to DE-first capstone grading while using Databricks-managed agentic capability where it is lowest risk and fastest to ship.
 
 ---
 
@@ -57,11 +57,11 @@
 
 | ID | Task | Priority | Status | Owner | Estimate | Depends On | Done Criteria |
 |---|---|---|---|---|---|---|---|
-| B1 | Ingest locked 5 CDC/WHO collections (with fallbacks) | P0 | NS | You | 2–3h | None | All 5 sources ingested and tracked |
-| B2 | Parse + chunk document corpus | P0 | NS | You | 1–2h | B1 | Chunked corpus created with metadata |
-| B3 | Generate embeddings + publish retrieval index | P0 | NS | You | 1–2h | B2 | Retrieval index is queryable |
-| B4 | Document QA checks (empty text/min chunk/embed success) | P0 | NS | You | 1h | B2, B3 | QA pass report generated |
-| B5 | Citation metadata verification | P0 | NS | You | 1h | B3 | Returned citations are human-verifiable |
+| B1 | Land locked 5 CDC/WHO source docs into Unity Catalog Volume (with fallbacks) | P0 | NS | You | 2–3h | None | All 5 sources landed and tracked in UC Volume |
+| B2 | Configure Agent Bricks Knowledge Assistant source and build | P0 | NS | You | 1–2h | B1 | KA build completes successfully for selected corpus |
+| B3 | Deploy/verify KA serving endpoint for document Q&A | P0 | NS | You | 1–2h | B2 | Endpoint is queryable and returns grounded responses |
+| B4 | Validate citations/guardrails on KA responses | P0 | NS | You | 1h | B3 | Citations are human-verifiable and guardrails behave as expected |
+| B5 | Fallback path smoke test: notebook-based citation RAG over Vector Search | P1 | NS | You | 1h | B1 | Fallback path documented and minimally validated |
 
 ---
 
@@ -80,10 +80,10 @@
 
 | ID | Task | Priority | Status | Owner | Estimate | Depends On | Done Criteria |
 |---|---|---|---|---|---|---|---|
-| D1 | Prompt → retrieval → answer flow wired | P0 | NS | You | 1–2h | B3 | End-to-end agent response path works |
-| D2 | Citation-grounding enforcement | P0 | NS | You | 1h | D1, B5 | Responses include relevant source citations |
-| D3 | 3 demo questions + paraphrase test pass | P0 | NS | You | 1h | D2, C3 | Acceptable answer quality across variants |
-| D4 | Abstention behavior for weak evidence | P1 | NS | You | 45m | D2 | Agent clearly abstains when unsupported |
+| D1 | Implement two-lane query path (Genie for structured, KA for document evidence) | P0 | NS | You | 1–2h | B3, C3 | Routing/usage pattern is clear and testable in demo flow |
+| D2 | Enforce citation-grounded document answers via KA | P0 | NS | You | 1h | D1, B4 | Document-lane responses include relevant citations |
+| D3 | 3 demo questions + paraphrase test pass across lanes | P0 | NS | You | 1h | D2, C3 | Acceptable answer quality across variants and both lanes |
+| D4 | Verify abstention behavior for weak/unsupported evidence | P1 | NS | You | 45m | D2 | System clearly abstains when support is insufficient |
 
 ---
 
