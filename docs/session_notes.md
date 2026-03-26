@@ -483,5 +483,7 @@ Define a **Protected Core Scope** that must survive any scope cut before 2026-03
   - Updated `src/01_ingest_cdc_places.py` to import table/path settings from `config.py`.
   - Updated `src/02_ingest_census_acs.py` to import table/path settings from `config.py`.
 - **Checklist tracking updated:** A1 and A2 moved from `NS` to `IP` in `docs/execution_checklist.md` pending Databricks run validation.
+- **Checkpoint commit created:** `44e1960` — scaffolded `src/` pipeline files (`00_setup_env.py`, `01_ingest_cdc_places.py`, `02_ingest_census_acs.py`, `config.py`) and synced progress docs.
+- **Next step:** run-validate A1/A2 in Databricks by uploading sample CDC/ACS raw files to configured DBFS paths and executing setup + ingestion scripts.
 
 
