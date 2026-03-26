@@ -1,6 +1,6 @@
 # Execution Checklist — Capstone MVP Sprint
 
-**Date:** 2026-03-25  
+**Date:** 2026-03-26  
 **POC:** Capstone Student  
 **TL;DR:** Execute protected-core MVP by 2026-03-28: reliable medallion pipeline, dashboard-first demo, citation-grounded agent workflow, lean eval gate, and cloud runbook.
 
@@ -118,26 +118,23 @@
 
 ---
 
-## Daily Gates
+## Daily Gates (Timeline Reset: start 2026-03-26)
 
-### Wed 2026-03-25
+### Thu 2026-03-26
 - Focus: A1–A5, B1–B2
 - Gate: Bronze/Silver stable + initial Gold draft queryable
 
-### Thu 2026-03-26
-- Focus: A6, B3–B5, C1–C3
-- Gate: Dashboard answers demo analytics questions from Gold data
-
 ### Fri 2026-03-27
-- Focus: D1–D4, E1–E4
-- Gate: Agent quality passes thresholds or only minor known issues remain
+- Focus: A6, B3–B5, C1–C3
+- Gate: Dashboard answers demo analytics questions from Gold data + KA endpoint returns cited responses
 
-### Sat 2026-03-28 (MVP Functional Deadline)
-- Focus: E5, F1–F4
+### Sat 2026-03-28
+- Focus: D1–D4, E1–E4, F1
+- Gate: Agent quality near/at thresholds with remediation list closed or minor-only
+
+### Sun 2026-03-29 (MVP Functional Target)
+- Focus: E5, F2–F4
 - Gate: End-to-end demo-ready system + runbook + eval evidence
-
-### Sun 2026-03-29 (Buffer/Polish)
-- Optional only: low-risk polish and selective stretch items
 
 ---
 
@@ -154,7 +151,7 @@
 
 | Date | Workstream | Blocker | Impact | Mitigation | Status |
 |---|---|---|---|---|---|
-| 2026-03-25 | — | — | — | — | Open |
+| 2026-03-26 | — | Timeline reset: execution starts from A) Data Pipeline with all tasks at NS | 1-day schedule compression | Prioritize P0 tasks only; defer all P1 unless ahead of schedule | Open |
 
 ---
 
