@@ -488,5 +488,13 @@ Define a **Protected Core Scope** that must survive any scope cut before 2026-03
 - **Runbook update completed:** expanded `README.md` with A1/A2 Databricks validation instructions (repo structure, run order, target bronze tables, and config override note).
 - **Bronze validation script added:** created `src/03_validate_bronze.py` to verify both bronze tables exist, have non-zero rows, and contain non-null ingestion metadata (`ingestion_ts`, `source_path`, `source_system`).
 - **Run order updated:** `README.md` now includes `src/03_validate_bronze.py` after CDC/ACS ingestion scripts.
+- **CDC raw acquisition test passed (local):**
+  - Added `src/00a_download_cdc_places_bulk.py` (bulk CSV snapshot downloader).
+  - Verified source URL `https://data.cdc.gov/api/views/swc5-untb/rows.csv?accessType=DOWNLOAD`.
+  - Download succeeded to `data/raw/cdc_places.csv` (~53 MB); schema preview confirms expected PLACES columns including `LocationID`, `MeasureId`, `Data_Value`.
+- **ACS raw acquisition test passed (local):**
+  - Added `src/00b_download_census_acs.py` (county-level ACS subject-table pull to CSV with `county_fips` enrichment).
+  - Default test run succeeded to `data/raw/census_acs.csv` with 3,222 county rows.
+  - Header/sample validation confirms expected fields: `NAME`, poverty %, median income, `state`, `county`, `county_fips`, `acs_year`, `source_url`.
 
 

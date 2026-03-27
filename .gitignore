@@ -1,0 +1,11 @@
+# Local raw data snapshots (keep out of Git)
+data/
+
+# Python artifacts
+__pycache__/
+.pytest_cache/
+*.pyc
+
+# Local environment files
+.env
+.env.*
