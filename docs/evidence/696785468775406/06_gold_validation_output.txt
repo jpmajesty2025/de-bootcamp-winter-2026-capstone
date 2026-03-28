@@ -1,0 +1,7 @@
+Gold row count: 229006
+Rows with null key metrics: 0
+Gold DIABETES avg: 12.400982
+Silver DIABETES avg: 12.400982
+DIABETES avg diff: 0.0
+Validation summary appended -> bootcamp_students.health_equity_capstone_jpmajesty2019.dq_gold_validation_summary: 1
+Gold validation status: PASS

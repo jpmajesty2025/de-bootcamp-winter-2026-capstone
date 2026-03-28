@@ -1,0 +1,12 @@
+
+--- Validating CDC Bronze: bootcamp_students.health_equity_capstone_jpmajesty2019.bronze_cdc_places ---
+Rows: 229298
+Null metadata rows: 0
+Validation status: PASS
+
+--- Validating ACS Bronze: bootcamp_students.health_equity_capstone_jpmajesty2019.bronze_census_acs ---
+Rows: 3222
+Null metadata rows: 0
+Validation status: PASS
+
+All Bronze validations passed.

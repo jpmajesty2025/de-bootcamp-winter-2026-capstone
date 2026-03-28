@@ -1,0 +1,5 @@
+Wrote CDC clean rows: 229232 -> bootcamp_students.health_equity_capstone_jpmajesty2019.silver_health_outcomes_clean
+Wrote CDC quarantine rows: 66 -> bootcamp_students.health_equity_capstone_jpmajesty2019.silver_health_outcomes_quarantine
+Wrote ACS clean rows: 3220 -> bootcamp_students.health_equity_capstone_jpmajesty2019.silver_socioeconomic_clean
+Wrote ACS quarantine rows: 2 -> bootcamp_students.health_equity_capstone_jpmajesty2019.silver_socioeconomic_quarantine
+Appended DQ monitoring rows -> bootcamp_students.health_equity_capstone_jpmajesty2019.dq_monitoring_runs: 2

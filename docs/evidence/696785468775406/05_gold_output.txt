@@ -1,0 +1,3 @@
+Wrote Gold rows: 229006 -> bootcamp_students.health_equity_capstone_jpmajesty2019.gold_health_equity_stats
+Distinct counties: 3141
+Distinct measures: 40

@@ -1,0 +1,9 @@
+layer,dataset,rows_total,rows_clean,rows_quarantine,pass_rate,status,run_ts
+silver,health_outcomes,229298,229232,66,0.9997121649556472,WARN,2026-03-28T22:20:27.123Z
+silver,socioeconomic_indicators,3222,3220,2,0.9993792675356921,WARN,2026-03-28T22:20:27.123Z
+silver,socioeconomic_indicators,3222,3220,2,0.9993792675356921,WARN,2026-03-28T22:04:37.273Z
+silver,health_outcomes,229298,229232,66,0.9997121649556472,WARN,2026-03-28T22:04:37.273Z
+silver,socioeconomic_indicators,3222,3222,0,1,PASS,2026-03-28T20:29:04.999Z
+silver,health_outcomes,229298,229298,0,1,PASS,2026-03-28T20:29:04.999Z
+silver,health_outcomes,229298,229298,0,1,PASS,2026-03-28T18:54:12.317Z
+silver,socioeconomic_indicators,3222,3222,0,1,PASS,2026-03-28T18:54:12.317Z
