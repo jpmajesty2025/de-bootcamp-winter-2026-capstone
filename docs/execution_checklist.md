@@ -15,11 +15,11 @@
 ---
 
 ## MVP Non-Negotiables (Q10 Protected Core)
-- [ ] **P0** Running Bronze/Silver/Gold pipeline for CDC PLACES + ACS with data quality checks
+- [x] **P0** Running Bronze/Silver/Gold pipeline for CDC PLACES + ACS with data quality checks
 - [ ] **P0** Gold-layer dashboard answers required demo analytics questions
 - [ ] **P0** Citation-grounded agent workflow over locked 5-collection CDC/WHO corpus
 - [ ] **P0** Lean MVP evaluation gate (15–25 questions + threshold checks)
-- [ ] **P0** Cloud-running deployment + concise runbook
+- [x] **P0** Cloud-running deployment + concise runbook
 
 ---
 
@@ -52,7 +52,7 @@
 | A3 | Silver conformance (FIPS/schema/date normalization) | P0 | DONE | You | 2–3h | A2c | Conformed Silver tables queryable and keyed consistently |
 | A4 | Gold fact tables (county burden + SDOH joins) | P0 | DONE | You | 2–3h | A3 | Gold marts populated and dashboard-ready |
 | A5 | Data quality checks (schema/null/unique/range/ref/freshness) | P0 | DONE | You | 2h | A3, A4 | DQ checks pass or exceptions documented with rationale |
-| A6 | End-to-end scheduled run validated | P0 | NS | You | 1h | A0, A1a, A1b, A2a, A2b, A2c, A3, A4, A5 | One full run completes reproducibly |
+| A6 | End-to-end scheduled run validated | P0 | DONE | You | 1h | A0, A1a, A1b, A2a, A2b, A2c, A3, A4, A5 | One full run completes reproducibly (A6 report + evidence bundle committed) |
 
 ---
 

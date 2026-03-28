@@ -1,6 +1,6 @@
 # Capstone Project Session Notes
 **Project:** Winter 2026 DE Bootcamp Capstone
-**Last Updated:** 2026-03-13
+**Last Updated:** 2026-03-28
 
 ---
 
@@ -174,9 +174,9 @@ The capstone pipeline has two outputs: (1) **Analytics dashboard** — structure
 ---
 
 ## Open Items
-- [ ] User to confirm/correct the 5 clarifying questions and their answers
-- [ ] Reconstruct 3-tier MNVP/MVP+/MVP++ plan
-- [ ] Draft capstone proposal: `docs/de_capstone_proposal_draft_1.md`
+- [x] User to confirm/correct the 5 clarifying questions and their answers
+- [x] Reconstruct 3-tier MNVP/MVP+/MVP++ plan
+- [x] Draft capstone proposal: `docs/de_capstone_proposal_draft_1.md`
 
 ---
 
@@ -575,6 +575,7 @@ Define a **Protected Core Scope** that must survive any scope cut before 2026-03
   - DIABETES avg diff: **0.0**
   - Validation summary appended to `dq_gold_validation_summary`: **1**
   - **Gold validation status: PASS**
-- **Execution status update:** A4 and A5 are complete in practice.
+- **Execution status update:** A4, A5, and A6 are complete in practice (full DAG run validated, evidence bundle captured).
+- **Next active focus:** Track B (Document/RAG ingestion) starting with B1 (land 5 locked CDC/WHO sources into UC Volume).
 
 
