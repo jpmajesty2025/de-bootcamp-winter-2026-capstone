@@ -541,5 +541,16 @@ Define a **Protected Core Scope** that must survive any scope cut before 2026-03
     - DQ monitoring rows appended: **2** (`dq_monitoring_runs`)
   - DAG timeline screenshot captured: `docs/dag_run_1_2026-03-28 115451.png`.
   - **Execution status update:** A3 is complete in practice; next focus is A4 (Gold fact tables) and A5 DQ hardening/coverage expansion.
+- **A4/A5 implementation checkpoint (2026-03-28):**
+  - Added Gold targets to `src/config.py`: `gold_health_equity_stats` and `dq_gold_validation_summary`.
+  - Created `src/05_build_gold.py`:
+    - Joins `silver_health_outcomes_clean` + `silver_socioeconomic_clean` on `county_fips`.
+    - Produces idempotent Gold snapshot (`overwrite`) with derived bands (`health_burden_band`, `poverty_band`).
+  - Created `src/06_validate_gold.py`:
+    - Validates Gold non-empty rowset and key metric non-null checks.
+    - Cross-checks DIABETES average between Gold and Silver health outputs.
+    - Appends run summary metrics to `dq_gold_validation_summary`.
+  - Updated `docs/execution_checklist.md`: A4 and A5 moved to `IP`.
+  - Syntax check passed for `src/05_build_gold.py`, `src/06_validate_gold.py`, and `src/config.py`.
 
 
