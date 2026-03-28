@@ -523,5 +523,14 @@ Define a **Protected Core Scope** that must survive any scope cut before 2026-03
 - **DLT status:**
   - Full DLT migration deferred for MVP timeline protection.
   - DLT-lite quality layer (expectation-like checks/quarantine equivalent) remains an optional post-core enhancement.
+- **A3 Silver kickoff (2026-03-28):**
+  - Added Silver table targets to `src/config.py`, including clean/quarantine outputs and `dq_monitoring_runs`.
+  - Created `src/04_conformed_silver.py` with non-DLT conformance flow:
+    - FIPS normalization and schema standardization for CDC/ACS.
+    - Clean vs quarantine split via rule flags (`dq_failed_rules`).
+    - Run-level DQ monitoring metrics appended to `dq_monitoring_runs`.
+    - Idempotent writes (`overwrite`) for Silver clean/quarantine outputs.
+  - Updated `docs/execution_checklist.md`: A3 moved to `IP`.
+  - Syntax check passed for `src/04_conformed_silver.py` and `src/config.py`.
 
 
