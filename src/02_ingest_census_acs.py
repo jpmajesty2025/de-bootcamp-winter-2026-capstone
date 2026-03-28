@@ -10,19 +10,19 @@ from pyspark.sql.functions import current_timestamp, lit
 
 spark = SparkSession.builder.getOrCreate()
 
-from config import ACS_SOURCE_PATH, BRONZE_ACS_TABLE
+from config import ACS_SOURCE_PATH, BRONZE_ACS_TABLE, ACS_SOURCE_FILE
 
 raw_df = (
     spark.read
     .option("header", True)
     .option("inferSchema", True)
-    .csv(ACS_SOURCE_PATH)
+    .csv(f"{ACS_SOURCE_PATH}{ACS_SOURCE_FILE}")
 )
 
 bronze_df = (
     raw_df
     .withColumn("ingestion_ts", current_timestamp())
-    .withColumn("source_path", lit(ACS_SOURCE_PATH))
+    .withColumn("source_path", lit(f"{ACS_SOURCE_PATH}{ACS_SOURCE_FILE}"))
     .withColumn("source_system", lit("census_acs"))
 )
 

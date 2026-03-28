@@ -3,7 +3,7 @@ Small utility script to download county-level Census ACS indicators to a CSV sna
 
 Usage:
     python src/00b_download_census_acs.py
-    python src/00b_download_census_acs.py --year 2023 --out data/raw/census_acs.csv
+    python src/00b_download_census_acs.py --year 2023 --out /Volumes/<catalog>/<schema>/census_acs/census_acs.csv
     python src/00b_download_census_acs.py --api-key YOUR_KEY
 """
 
@@ -12,12 +12,19 @@ from __future__ import annotations
 import argparse
 import csv
 import json
+import os
 from pathlib import Path
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 
+from config import ACS_SOURCE_FILE, ACS_SOURCE_PATH
+
 DEFAULT_YEAR = 2023
-DEFAULT_OUT = "data/raw/census_acs.csv"
+DEFAULT_OUT = f"{ACS_SOURCE_PATH}{ACS_SOURCE_FILE}"
+
+# Optional Databricks secret lookup defaults (used only if dbutils is available)
+DEFAULT_SECRET_SCOPE = "health_equity"
+DEFAULT_SECRET_KEY = "census_api_key"
 
 # ACS Subject Tables (county-level), selected SDOH indicators:
 # - S1701_C03_001E: Poverty percent estimate
@@ -80,6 +87,28 @@ def write_csv(payload: list[list[str]], out_path: Path, year: int, source_url: s
     return len(rows)
 
 
+def resolve_api_key(cli_api_key: str | None) -> str | None:
+    if cli_api_key:
+        return cli_api_key
+
+    env_key = os.getenv("CENSUS_API_KEY")
+    if env_key:
+        return env_key
+
+    dbutils_obj = globals().get("dbutils")
+    if dbutils_obj is None:
+        return None
+
+    secret_scope = os.getenv("CENSUS_API_SECRET_SCOPE", DEFAULT_SECRET_SCOPE)
+    secret_key = os.getenv("CENSUS_API_SECRET_KEY", DEFAULT_SECRET_KEY)
+
+    try:
+        secret_value = dbutils_obj.secrets.get(scope=secret_scope, key=secret_key)
+        return secret_value or None
+    except Exception:
+        return None
+
+
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Download Census ACS county indicators to CSV.")
     parser.add_argument("--year", type=int, default=DEFAULT_YEAR, help=f"ACS year (default: {DEFAULT_YEAR})")
@@ -91,9 +120,11 @@ def parse_args() -> argparse.Namespace:
 def main() -> None:
     args = parse_args()
     out_path = Path(args.out)
+    api_key = resolve_api_key(args.api_key)
 
-    source_url = build_url(args.year, args.api_key)
+    source_url = build_url(args.year, api_key)
     print(f"Downloading from: {source_url}")
+    print(f"Using API key: {'yes' if api_key else 'no'}")
 
     payload = fetch_acs_rows(source_url)
     row_count = write_csv(payload, out_path, args.year, source_url)

@@ -10,19 +10,19 @@ from pyspark.sql.functions import current_timestamp, lit
 
 spark = SparkSession.builder.getOrCreate()
 
-from config import BRONZE_CDC_PLACES_TABLE, CDC_PLACES_SOURCE_PATH
+from config import BRONZE_CDC_PLACES_TABLE, CDC_PLACES_SOURCE_PATH,CDC_PLACES_SOURCE_FILE
 
 raw_df = (
     spark.read
     .option("header", True)
     .option("inferSchema", True)
-    .csv(CDC_PLACES_SOURCE_PATH)
+    .csv(f"{CDC_PLACES_SOURCE_PATH}{CDC_PLACES_SOURCE_FILE}")
 )
 
 bronze_df = (
     raw_df
     .withColumn("ingestion_ts", current_timestamp())
-    .withColumn("source_path", lit(CDC_PLACES_SOURCE_PATH))
+    .withColumn("source_path", lit(f"{CDC_PLACES_SOURCE_PATH}{CDC_PLACES_SOURCE_FILE}"))
     .withColumn("source_system", lit("cdc_places"))
 )
 

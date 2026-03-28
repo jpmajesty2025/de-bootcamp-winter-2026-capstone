@@ -11,9 +11,7 @@ from __future__ import annotations
 import argparse
 from pathlib import Path
 from urllib.request import Request, urlopen
-
-CDC_PLACES_BULK_CSV_URL = "https://data.cdc.gov/api/views/swc5-untb/rows.csv?accessType=DOWNLOAD"
-
+from config import CDC_PLACES_BULK_CSV_URL,CDC_PLACES_SOURCE_PATH,CDC_PLACES_SOURCE_FILE
 
 def download_file(url: str, out_path: Path) -> int:
     out_path.parent.mkdir(parents=True, exist_ok=True)
@@ -37,8 +35,8 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Download CDC PLACES bulk CSV.")
     parser.add_argument(
         "--out",
-        default="data/raw/cdc_places.csv",
-        help="Output file path (default: data/raw/cdc_places.csv)",
+        default=f"{CDC_PLACES_SOURCE_PATH}{CDC_PLACES_SOURCE_FILE}",
+        help=f"Output file path (default: {CDC_PLACES_SOURCE_PATH}{CDC_PLACES_SOURCE_FILE})",
     )
     return parser.parse_args()
 

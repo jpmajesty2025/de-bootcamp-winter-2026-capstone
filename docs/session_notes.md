@@ -496,5 +496,14 @@ Define a **Protected Core Scope** that must survive any scope cut before 2026-03
   - Added `src/00b_download_census_acs.py` (county-level ACS subject-table pull to CSV with `county_fips` enrichment).
   - Default test run succeeded to `data/raw/census_acs.csv` with 3,222 county rows.
   - Header/sample validation confirms expected fields: `NAME`, poverty %, median income, `state`, `county`, `county_fips`, `acs_year`, `source_url`.
+- **Decisions confirmed (2026-03-27):**
+  - Use **managed UC Volumes** for MVP (external volumes deferred).
+  - Add **optional** Census API key support (CLI arg / env var / Databricks secret), but keep no-key path functional by default.
+  - Treat execution as **Databricks-first**; no local fallback required for core workflow.
+- **Cleanup patch progress:**
+  - Tightened run-order docs to `00 -> 00a/00b -> 01 -> 02 -> 03`.
+  - Added managed-vs-external volume guidance in `src/config.py` and `README.md`.
+  - Refined A-workstream dependencies in `docs/execution_checklist.md` with explicit Bronze validation gate (`A2c`).
+  - Ran syntax sanity check via `python -m py_compile` for pipeline scripts (pass).
 
 
