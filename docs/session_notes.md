@@ -532,5 +532,14 @@ Define a **Protected Core Scope** that must survive any scope cut before 2026-03
     - Idempotent writes (`overwrite`) for Silver clean/quarantine outputs.
   - Updated `docs/execution_checklist.md`: A3 moved to `IP`.
   - Syntax check passed for `src/04_conformed_silver.py` and `src/config.py`.
+- **Databricks DAG Run 1 (all green) — 2026-03-28:**
+  - `Conformed_silver_tables` output:
+    - CDC clean: **229,298**
+    - CDC quarantine: **0**
+    - ACS clean: **3,222**
+    - ACS quarantine: **0**
+    - DQ monitoring rows appended: **2** (`dq_monitoring_runs`)
+  - DAG timeline screenshot captured: `docs/dag_run_1_2026-03-28 115451.png`.
+  - **Execution status update:** A3 is complete in practice; next focus is A4 (Gold fact tables) and A5 DQ hardening/coverage expansion.
 
 
