@@ -60,7 +60,7 @@
 
 | ID | Task | Priority | Status | Owner | Estimate | Depends On | Done Criteria |
 |---|---|---|---|---|---|---|---|
-| B1 | Land locked 5 CDC/WHO source docs into Unity Catalog Volume (with fallbacks) | P0 | NS | You | 2–3h | None | All 5 sources landed and tracked in UC Volume |
+| B1 | Land locked 5 CDC/WHO source docs into Unity Catalog Volume (with fallbacks) | P0 | IP | You | 2–3h | None | All 5 sources landed and tracked in UC Volume |
 | B2 | Configure Agent Bricks Knowledge Assistant source and build | P0 | NS | You | 1–2h | B1 | KA build completes successfully for selected corpus |
 | B3 | Deploy/verify KA serving endpoint for document Q&A | P0 | NS | You | 1–2h | B2 | Endpoint is queryable and returns grounded responses |
 | B4 | Validate citations/guardrails on KA responses | P0 | NS | You | 1h | B3 | Citations are human-verifiable and guardrails behave as expected |

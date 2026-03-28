@@ -577,5 +577,13 @@ Define a **Protected Core Scope** that must survive any scope cut before 2026-03
   - **Gold validation status: PASS**
 - **Execution status update:** A4, A5, and A6 are complete in practice (full DAG run validated, evidence bundle captured).
 - **Next active focus:** Track B (Document/RAG ingestion) starting with B1 (land 5 locked CDC/WHO sources into UC Volume).
+- **Track B kickoff progress (2026-03-28):**
+  - Added document-lane config in `src/config.py`:
+    - `DOCS_SOURCE_PATH` for UC docs volume
+    - `LOCKED_DOC_SOURCES` map for the 5 locked CDC/WHO sources
+  - Updated `src/00_setup_env.py` to create managed docs volume: `cdc_who_docs`.
+  - Created `src/07_ingest_cdc_who_docs.py` to download locked sources and write `locked_doc_manifest.csv` for landing tracking.
+  - Syntax sanity check passed for `src/07_ingest_cdc_who_docs.py`, `src/00_setup_env.py`, and `src/config.py`.
+  - Updated `docs/execution_checklist.md`: B1 moved from `NS` to `IP`.
 
 

@@ -29,3 +29,13 @@ ACS_SOURCE_FILE="census_acs.csv"
 
 
 CDC_PLACES_BULK_CSV_URL = "https://data.cdc.gov/api/views/swc5-untb/rows.csv?accessType=DOWNLOAD"
+
+DOCS_SOURCE_PATH = f"/Volumes/{CATALOG}/{SCHEMA}/cdc_who_docs/"
+
+LOCKED_DOC_SOURCES = {
+    "cdc_advancing_health_equity_collection.html": "https://www.cdc.gov/pcd/collections/Advancing_Health_Collection.htm",
+    "cdc_mapping_chronic_disease_collection.html": "https://www.cdc.gov/pcd/collections/Mapping_Chronic_Disease.htm",
+    "cdc_rural_health_disparities_2025.html": "https://www.cdc.gov/pcd/issues/2025/25_0202.htm",
+    "cdc_health_equity_science_sdoh.html": "https://www.cdc.gov/health-equity-chronic-disease/hcp/health-equity-science/index.html",
+    "who_world_health_statistics_2025.pdf": "https://iris.who.int/server/api/core/bitstreams/c992fbdc-11ef-43db-a478-7e7a195403ae/content",
+}
