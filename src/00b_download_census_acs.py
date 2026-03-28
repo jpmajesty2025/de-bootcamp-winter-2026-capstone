@@ -1,4 +1,4 @@
-"""
+""" 
 Small utility script to download county-level Census ACS indicators to a CSV snapshot.
 
 Usage:
@@ -109,16 +109,16 @@ def resolve_api_key(cli_api_key: str | None) -> str | None:
         return None
 
 
-def parse_args() -> argparse.Namespace:
+def parse_args(args=None) -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Download Census ACS county indicators to CSV.")
     parser.add_argument("--year", type=int, default=DEFAULT_YEAR, help=f"ACS year (default: {DEFAULT_YEAR})")
     parser.add_argument("--out", default=DEFAULT_OUT, help=f"Output path (default: {DEFAULT_OUT})")
     parser.add_argument("--api-key", default=None, help="Optional Census API key")
-    return parser.parse_args()
+    return parser.parse_args(args)
 
 
 def main() -> None:
-    args = parse_args()
+    args = parse_args([])
     out_path = Path(args.out)
     api_key = resolve_api_key(args.api_key)
 

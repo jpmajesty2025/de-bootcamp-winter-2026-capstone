@@ -505,5 +505,13 @@ Define a **Protected Core Scope** that must survive any scope cut before 2026-03
   - Added managed-vs-external volume guidance in `src/config.py` and `README.md`.
   - Refined A-workstream dependencies in `docs/execution_checklist.md` with explicit Bronze validation gate (`A2c`).
   - Ran syntax sanity check via `python -m py_compile` for pipeline scripts (pass).
+- **Databricks runtime compatibility fix applied (2026-03-28):**
+  - Updated `src/00a_download_cdc_places_bulk.py` and `src/00b_download_census_acs.py` argparse handling for Databricks REPL context (avoids `SystemExit: 2` from notebook-injected args).
+  - Verified both download scripts run successfully after the fix.
+- **A-workstream Bronze validation result (Databricks run):**
+  - CDC Bronze table: `bootcamp_students.health_equity_capstone_jpmajesty2019.bronze_cdc_places` → **229,298 rows**, **0 null metadata rows**, PASS.
+  - ACS Bronze table: `bootcamp_students.health_equity_capstone_jpmajesty2019.bronze_census_acs` → **3,222 rows**, **0 null metadata rows**, PASS.
+  - Final output: **All Bronze validations passed.**
+- **Execution status update:** A0, A1a, A1b, A2a, A2b, A2c are now completed in practice; next focus is A3 (Silver conformance).
 
 

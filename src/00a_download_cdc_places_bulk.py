@@ -1,4 +1,4 @@
-"""
+""" 
 Small utility script to download CDC PLACES county data as a bulk CSV snapshot.
 
 Usage:
@@ -31,18 +31,18 @@ def download_file(url: str, out_path: Path) -> int:
     return len(content)
 
 
-def parse_args() -> argparse.Namespace:
+def parse_args(args=None) -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Download CDC PLACES bulk CSV.")
     parser.add_argument(
         "--out",
         default=f"{CDC_PLACES_SOURCE_PATH}{CDC_PLACES_SOURCE_FILE}",
         help=f"Output file path (default: {CDC_PLACES_SOURCE_PATH}{CDC_PLACES_SOURCE_FILE})",
     )
-    return parser.parse_args()
+    return parser.parse_args(args)
 
 
 def main() -> None:
-    args = parse_args()
+    args = parse_args([])
     out_path = Path(args.out)
 
     print(f"Downloading from: {CDC_PLACES_BULK_CSV_URL}")
