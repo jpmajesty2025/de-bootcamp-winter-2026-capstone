@@ -516,5 +516,12 @@ Define a **Protected Core Scope** that must survive any scope cut before 2026-03
 - **Idempotency hardening (Bronze ingestion):**
   - Updated `src/01_ingest_cdc_places.py` and `src/02_ingest_census_acs.py` write mode from `append` to `overwrite`.
   - Rationale: rerunning ingestion should not duplicate Bronze rows for full-snapshot source loads.
+- **Orchestration decision (2026-03-28):**
+  - Use a **single Databricks Job (multi-task DAG)** for MVP orchestration.
+  - Planned task flow: `00_setup_env` → (`00a_download_cdc`, `00b_download_acs`) → (`01_ingest_cdc`, `02_ingest_acs`) → `03_validate_bronze` → `04_conformed_silver`.
+  - Rationale: lowest infrastructure risk, easiest retries/scheduling/alerts, and aligned to current notebook/script assets.
+- **DLT status:**
+  - Full DLT migration deferred for MVP timeline protection.
+  - DLT-lite quality layer (expectation-like checks/quarantine equivalent) remains an optional post-core enhancement.
 
 

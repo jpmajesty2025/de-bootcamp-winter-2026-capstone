@@ -26,6 +26,21 @@ Workstream A — Data Pipeline (A1/A2): validate Bronze ingestion for CDC PLACES
    - `{CATALOG}.{SCHEMA}.bronze_census_acs`
    - Validation script confirms non-zero rows and non-null ingestion metadata (`ingestion_ts`, `source_path`, `source_system`).
 
+## Orchestration Strategy (Databricks)
+For MVP, orchestrate the scripts as a **single Databricks Job** with task dependencies:
+1. `00_setup_env`
+2. `00a_download_cdc_places_bulk` and `00b_download_census_acs` (parallel)
+3. `01_ingest_cdc_places` and `02_ingest_census_acs`
+4. `03_validate_bronze`
+5. `04_conformed_silver` (next phase in current plan)
+
+Why Jobs for MVP:
+- Lowest setup risk and fastest path to reliable execution.
+- Works well with current idempotent snapshot ingestion (`overwrite` for Bronze loads).
+- Easy to add retries, alerts, and schedules without full DLT migration.
+
+Pipeline options in Databricks (Ingestion/ETL Pipelines) remain valid for future hardening, and a DLT-lite quality layer is tracked as an optional enhancement after core MVP stability.
+
 ## Notes
 - Default setup uses **managed UC Volumes**. External volume locations can be added later in `src/00_setup_env.py`.
 - If catalog/schema differs in your workspace, update `src/config.py` before running.
