@@ -540,7 +540,6 @@ Define a **Protected Core Scope** that must survive any scope cut before 2026-03
     - ACS quarantine: **0**
     - DQ monitoring rows appended: **2** (`dq_monitoring_runs`)
   - DAG timeline screenshot captured: `docs/dag_run_1_2026-03-28 115451.png`.
-  - **Execution status update:** A3 is complete in practice; next focus is A4 (Gold fact tables) and A5 DQ hardening/coverage expansion.
 - **A4/A5 implementation checkpoint (2026-03-28):**
   - Added Gold targets to `src/config.py`: `gold_health_equity_stats` and `dq_gold_validation_summary`.
   - Created `src/05_build_gold.py`:
@@ -552,5 +551,30 @@ Define a **Protected Core Scope** that must survive any scope cut before 2026-03
     - Appends run summary metrics to `dq_gold_validation_summary`.
   - Updated `docs/execution_checklist.md`: A4 and A5 moved to `IP`.
   - Syntax check passed for `src/05_build_gold.py`, `src/06_validate_gold.py`, and `src/config.py`.
+- **Silver quarantine + Gold validation hardening (2026-03-28):**
+  - Identified validation failure cause: **66 null `data_value`** rows in Gold inherited from Silver clean CDC output.
+  - Root-cause diagnostics confirmed:
+    - `silver_health_null_data_value = 66`
+    - `cdc_quarantine_rows = 0` (pre-fix)
+    - `gold_null_data_value = 66` (pre-fix)
+  - Updated `src/04_conformed_silver.py`:
+    - Added explicit boolean rule flags and `dq_any_failure` gating.
+    - Ensured clean-table writes project only stable/base columns to avoid Delta schema mismatch.
+    - Routed failed rows to quarantine outputs with `dq_failed_rules` and `dq_run_ts`.
+  - Post-fix verification:
+    - `silver_health_null_data_value = 0`
+    - `cdc_quarantine_rows = 66`
+    - `gold_null_data_value = 0`
+  - Updated `src/06_validate_gold.py`:
+    - Adjusted DIABETES average cross-check to compare Gold against **join-aligned Silver subset** (same county population) instead of full Silver.
+- **Gold validation pass (post-fix):**
+  - Gold row count: **229,006**
+  - Rows with null key metrics: **0**
+  - Gold DIABETES avg: **12.400982**
+  - Silver DIABETES avg (join-aligned): **12.400982**
+  - DIABETES avg diff: **0.0**
+  - Validation summary appended to `dq_gold_validation_summary`: **1**
+  - **Gold validation status: PASS**
+- **Execution status update:** A4 and A5 are complete in practice.
 
 

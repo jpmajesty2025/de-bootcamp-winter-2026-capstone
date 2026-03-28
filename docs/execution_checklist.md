@@ -50,8 +50,8 @@
 | A2b | ACS Bronze table ingestion | P0 | DONE | You | 1h | A2a | `src/02_ingest_census_acs.py` creates Bronze Delta |
 | A2c | Bronze validation gate (CDC + ACS) | P0 | DONE | You | 30m | A1b, A2b | `src/03_validate_bronze.py` passes |
 | A3 | Silver conformance (FIPS/schema/date normalization) | P0 | DONE | You | 2–3h | A2c | Conformed Silver tables queryable and keyed consistently |
-| A4 | Gold fact tables (county burden + SDOH joins) | P0 | IP | You | 2–3h | A3 | Gold marts populated and dashboard-ready |
-| A5 | Data quality checks (schema/null/unique/range/ref/freshness) | P0 | IP | You | 2h | A3, A4 | DQ checks pass or exceptions documented with rationale |
+| A4 | Gold fact tables (county burden + SDOH joins) | P0 | DONE | You | 2–3h | A3 | Gold marts populated and dashboard-ready |
+| A5 | Data quality checks (schema/null/unique/range/ref/freshness) | P0 | DONE | You | 2h | A3, A4 | DQ checks pass or exceptions documented with rationale |
 | A6 | End-to-end scheduled run validated | P0 | NS | You | 1h | A0, A1a, A1b, A2a, A2b, A2c, A3, A4, A5 | One full run completes reproducibly |
 
 ---

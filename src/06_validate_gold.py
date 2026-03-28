@@ -35,15 +35,28 @@ if null_key_metric_rows > 0:
         f"in {GOLD_HEALTH_EQUITY_STATS_TABLE}"
     )
 
-gold_diabetes_avg = (
+# Compare DIABETES average on like-for-like population:
+# Gold is an inner-join subset, so Silver must be restricted to Gold counties for a fair check.
+gold_diabetes_df = (
     gold_df.filter(col("measure_id") == "DIABETES")
-    .agg(spark_round(avg(col("data_value")), 6).alias("gold_diabetes_avg"))
+    .select("county_fips", col("data_value").alias("gold_data_value"))
+)
+
+silver_diabetes_join_aligned_df = (
+    silver_health_df.filter(col("measure_id") == "DIABETES")
+    .select("county_fips", col("data_value").alias("silver_data_value"))
+    .join(gold_diabetes_df.select("county_fips").distinct(), on="county_fips", how="inner")
+)
+
+gold_diabetes_avg = (
+    gold_diabetes_df
+    .agg(spark_round(avg(col("gold_data_value")), 6).alias("gold_diabetes_avg"))
     .collect()[0][0]
 )
 
 silver_diabetes_avg = (
-    silver_health_df.filter(col("measure_id") == "DIABETES")
-    .agg(spark_round(avg(col("data_value")), 6).alias("silver_diabetes_avg"))
+    silver_diabetes_join_aligned_df
+    .agg(spark_round(avg(col("silver_data_value")), 6).alias("silver_diabetes_avg"))
     .collect()[0][0]
 )
 
@@ -54,8 +67,8 @@ else:
 
 if diabetes_avg_diff is not None and diabetes_avg_diff > 0.0001:
     raise ValueError(
-        f"Gold validation failed: DIABETES average mismatch "
-        f"(gold={gold_diabetes_avg}, silver={silver_diabetes_avg}, diff={diabetes_avg_diff})"
+        f"Gold validation failed: DIABETES average mismatch on join-aligned population "
+        f"(gold={gold_diabetes_avg}, silver_join_aligned={silver_diabetes_avg}, diff={diabetes_avg_diff})"
     )
 
 summary_df = (

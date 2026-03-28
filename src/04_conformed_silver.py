@@ -37,7 +37,10 @@ spark = SparkSession.builder.getOrCreate()
 
 
 def with_failed_rules(*rule_exprs):
-    return concat_ws(";", array_remove(array(*rule_exprs), lit(None)))
+    # concat_ws skips null inputs, so this safely produces:
+    # - "" when no rules failed
+    # - "rule_a;rule_b" when one or more rules failed
+    return concat_ws(";", *rule_exprs)
 
 
 # --- CDC PLACES -> Silver Health Outcomes ---
@@ -73,32 +76,74 @@ cdc_conformed_df = (
 
 cdc_flagged_df = (
     cdc_conformed_df
+    .withColumn("dq_invalid_county_fips", (col("county_fips").isNull()) | (length(col("county_fips")) != 5))
+    .withColumn("dq_null_data_value", col("data_value").isNull())
+    .withColumn("dq_data_value_out_of_range_0_100", (col("data_value") < 0) | (col("data_value") > 100))
+    .withColumn("dq_null_measure_id", col("measure_id").isNull() | (trim(col("measure_id")) == ""))
+    .withColumn("dq_null_ingestion_ts", col("ingestion_ts").isNull())
+    .withColumn(
+        "dq_any_failure",
+        col("dq_invalid_county_fips")
+        | col("dq_null_data_value")
+        | col("dq_data_value_out_of_range_0_100")
+        | col("dq_null_measure_id")
+        | col("dq_null_ingestion_ts"),
+    )
     .withColumn(
         "dq_failed_rules",
         with_failed_rules(
-            when((col("county_fips").isNull()) | (length(col("county_fips")) != 5), lit("invalid_county_fips")),
-            when(col("data_value").isNull(), lit("null_data_value")),
-            when((col("data_value") < 0) | (col("data_value") > 100), lit("data_value_out_of_range_0_100")),
-            when(col("measure_id").isNull() | (trim(col("measure_id")) == ""), lit("null_measure_id")),
-            when(col("ingestion_ts").isNull(), lit("null_ingestion_ts")),
+            when(col("dq_invalid_county_fips"), lit("invalid_county_fips")),
+            when(col("dq_null_data_value"), lit("null_data_value")),
+            when(col("dq_data_value_out_of_range_0_100"), lit("data_value_out_of_range_0_100")),
+            when(col("dq_null_measure_id"), lit("null_measure_id")),
+            when(col("dq_null_ingestion_ts"), lit("null_ingestion_ts")),
         ),
     )
     .withColumn("dq_run_ts", current_timestamp())
 )
 
-cdc_clean_df = cdc_flagged_df.filter(col("dq_failed_rules") == "")
-cdc_quarantine_df = cdc_flagged_df.filter(col("dq_failed_rules") != "")
+cdc_clean_df = cdc_flagged_df.filter(~col("dq_any_failure"))
+cdc_quarantine_df = cdc_flagged_df.filter(col("dq_any_failure"))
+
+cdc_clean_base_df = cdc_clean_df.select(
+    "county_fips",
+    "year",
+    "state_abbr",
+    "state_name",
+    "county_name",
+    "measure_id",
+    "measure_name",
+    "data_value",
+    "source_system",
+    "source_path",
+    "ingestion_ts",
+)
 
 (
-    cdc_clean_df.drop("dq_failed_rules", "dq_run_ts")
-    .write
+    cdc_clean_base_df.write
     .format("delta")
     .mode("overwrite")
     .saveAsTable(SILVER_HEALTH_OUTCOMES_CLEAN_TABLE)
 )
 
+cdc_quarantine_output_df = cdc_quarantine_df.select(
+    "county_fips",
+    "year",
+    "state_abbr",
+    "state_name",
+    "county_name",
+    "measure_id",
+    "measure_name",
+    "data_value",
+    "source_system",
+    "source_path",
+    "ingestion_ts",
+    "dq_failed_rules",
+    "dq_run_ts",
+)
+
 (
-    cdc_quarantine_df.write
+    cdc_quarantine_output_df.write
     .format("delta")
     .mode("overwrite")
     .saveAsTable(SILVER_HEALTH_OUTCOMES_QUARANTINE_TABLE)
@@ -106,8 +151,7 @@ cdc_quarantine_df = cdc_flagged_df.filter(col("dq_failed_rules") != "")
 
 # Compatibility output: existing silver table points to clean data
 (
-    cdc_clean_df.drop("dq_failed_rules", "dq_run_ts")
-    .write
+    cdc_clean_base_df.write
     .format("delta")
     .mode("overwrite")
     .saveAsTable(SILVER_HEALTH_OUTCOMES_TABLE)
@@ -147,33 +191,77 @@ acs_conformed_df = (
 
 acs_flagged_df = (
     acs_conformed_df
+    .withColumn("dq_invalid_county_fips", (col("county_fips").isNull()) | (length(col("county_fips")) != 5))
+    .withColumn("dq_null_poverty_pct", col("poverty_pct").isNull())
+    .withColumn("dq_poverty_pct_out_of_range_0_100", (col("poverty_pct") < 0) | (col("poverty_pct") > 100))
+    .withColumn("dq_null_median_household_income", col("median_household_income").isNull())
+    .withColumn("dq_median_household_income_negative", col("median_household_income") < 0)
+    .withColumn("dq_null_ingestion_ts", col("ingestion_ts").isNull())
+    .withColumn(
+        "dq_any_failure",
+        col("dq_invalid_county_fips")
+        | col("dq_null_poverty_pct")
+        | col("dq_poverty_pct_out_of_range_0_100")
+        | col("dq_null_median_household_income")
+        | col("dq_median_household_income_negative")
+        | col("dq_null_ingestion_ts"),
+    )
     .withColumn(
         "dq_failed_rules",
         with_failed_rules(
-            when((col("county_fips").isNull()) | (length(col("county_fips")) != 5), lit("invalid_county_fips")),
-            when(col("poverty_pct").isNull(), lit("null_poverty_pct")),
-            when((col("poverty_pct") < 0) | (col("poverty_pct") > 100), lit("poverty_pct_out_of_range_0_100")),
-            when(col("median_household_income").isNull(), lit("null_median_household_income")),
-            when(col("median_household_income") < 0, lit("median_household_income_negative")),
-            when(col("ingestion_ts").isNull(), lit("null_ingestion_ts")),
+            when(col("dq_invalid_county_fips"), lit("invalid_county_fips")),
+            when(col("dq_null_poverty_pct"), lit("null_poverty_pct")),
+            when(col("dq_poverty_pct_out_of_range_0_100"), lit("poverty_pct_out_of_range_0_100")),
+            when(col("dq_null_median_household_income"), lit("null_median_household_income")),
+            when(col("dq_median_household_income_negative"), lit("median_household_income_negative")),
+            when(col("dq_null_ingestion_ts"), lit("null_ingestion_ts")),
         ),
     )
     .withColumn("dq_run_ts", current_timestamp())
 )
 
-acs_clean_df = acs_flagged_df.filter(col("dq_failed_rules") == "")
-acs_quarantine_df = acs_flagged_df.filter(col("dq_failed_rules") != "")
+acs_clean_df = acs_flagged_df.filter(~col("dq_any_failure"))
+acs_quarantine_df = acs_flagged_df.filter(col("dq_any_failure"))
+
+acs_clean_base_df = acs_clean_df.select(
+    "county_fips",
+    "acs_year",
+    "county_label",
+    "state_fips",
+    "county_fips_3",
+    "poverty_pct",
+    "median_household_income",
+    "source_url",
+    "source_system",
+    "source_path",
+    "ingestion_ts",
+)
 
 (
-    acs_clean_df.drop("dq_failed_rules", "dq_run_ts")
-    .write
+    acs_clean_base_df.write
     .format("delta")
     .mode("overwrite")
     .saveAsTable(SILVER_SOCIOECONOMIC_CLEAN_TABLE)
 )
 
+acs_quarantine_output_df = acs_quarantine_df.select(
+    "county_fips",
+    "acs_year",
+    "county_label",
+    "state_fips",
+    "county_fips_3",
+    "poverty_pct",
+    "median_household_income",
+    "source_url",
+    "source_system",
+    "source_path",
+    "ingestion_ts",
+    "dq_failed_rules",
+    "dq_run_ts",
+)
+
 (
-    acs_quarantine_df.write
+    acs_quarantine_output_df.write
     .format("delta")
     .mode("overwrite")
     .saveAsTable(SILVER_SOCIOECONOMIC_QUARANTINE_TABLE)
@@ -181,8 +269,7 @@ acs_quarantine_df = acs_flagged_df.filter(col("dq_failed_rules") != "")
 
 # Compatibility output: existing silver table points to clean data
 (
-    acs_clean_df.drop("dq_failed_rules", "dq_run_ts")
-    .write
+    acs_clean_base_df.write
     .format("delta")
     .mode("overwrite")
     .saveAsTable(SILVER_SOCIOECONOMIC_TABLE)
