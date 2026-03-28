@@ -29,7 +29,7 @@ bronze_df = (
 (
     bronze_df.write
     .format("delta")
-    .mode("append")
+    .mode("overwrite")
     .saveAsTable(BRONZE_ACS_TABLE)
 )
 

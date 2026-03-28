@@ -513,5 +513,8 @@ Define a **Protected Core Scope** that must survive any scope cut before 2026-03
   - ACS Bronze table: `bootcamp_students.health_equity_capstone_jpmajesty2019.bronze_census_acs` → **3,222 rows**, **0 null metadata rows**, PASS.
   - Final output: **All Bronze validations passed.**
 - **Execution status update:** A0, A1a, A1b, A2a, A2b, A2c are now completed in practice; next focus is A3 (Silver conformance).
+- **Idempotency hardening (Bronze ingestion):**
+  - Updated `src/01_ingest_cdc_places.py` and `src/02_ingest_census_acs.py` write mode from `append` to `overwrite`.
+  - Rationale: rerunning ingestion should not duplicate Bronze rows for full-snapshot source loads.
 
 
