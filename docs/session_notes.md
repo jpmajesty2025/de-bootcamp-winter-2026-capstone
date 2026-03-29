@@ -630,6 +630,7 @@ Define a **Protected Core Scope** that must survive any scope cut before 2026-03
   - Workaround used: replace malformed cell content with manual copy/paste from local file.
 - **Engineering guardrails codified (2026-03-29):**
   - Added `docs/engineering_guardrails.md` as a default operating standard for idempotency-by-default, retry-safe infra patterns, and senior engineering quality gates across data/backend/software work.
-- **Next focus:** B4 — configure/build Agent Bricks Knowledge Assistant on the completed Vector Search index.
+- **Execution status update:** B4 moved to `IP` in `docs/execution_checklist.md`.
+- **Next focus:** execute B4 in Databricks UI (build Knowledge Assistant on `bootcamp_students.health_equity_capstone_jpmajesty2019.cdc_who_docs_index`) and capture build/endpoint evidence.
 
 
