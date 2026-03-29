@@ -72,8 +72,8 @@
 
 | ID | Task | Priority | Status | Owner | Estimate | Depends On | Done Criteria |
 |---|---|---|---|---|---|---|---|
-| C1 | Final KPI/visual shortlist mapped to 3 demo questions | P0 | IP | You | 45m | A4 | KPI list approved and query-backed |
-| C2 | Build dashboard views (burden, SDOH association, rural/urban) | P0 | NS | You | 2–3h | C1 | Core views implemented and filterable |
+| C1 | Final KPI/visual shortlist mapped to 3 demo questions | P0 | DONE | You | 45m | A4 | KPI list approved and query-backed |
+| C2 | Build dashboard views (burden, SDOH association, rural/urban) | P0 | IP | You | 2–3h | C1 | Core views implemented and filterable |
 | C3 | Reconcile dashboard numbers vs gold tables | P0 | NS | You | 1h | C2 | No major contradictions |
 | C4 | Demo-ready polish (labels, filters, readability) | P1 | NS | You | 45m | C3 | Dashboard understandable in <2 min walkthrough |
 
