@@ -626,6 +626,8 @@ Define a **Protected Core Scope** that must survive any scope cut before 2026-03
     - create/verify Delta Sync index on `chunked_docs` (idempotent, `chunk_id` PK, `chunk_text` embedding source)
     - poll index status until no longer provisioning/building
   - Local syntax check passed for `src/config.py` and `src/09_create_vector_index.py`.
+- **Engineering guardrails codified (2026-03-29):**
+  - Added `docs/engineering_guardrails.md` as a default operating standard for idempotency-by-default, retry-safe infra patterns, and senior engineering quality gates across data/backend/software work.
 - **Next focus:** run `src/09_create_vector_index.py` in Databricks and capture endpoint/index readiness evidence.
 
 
