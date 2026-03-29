@@ -585,5 +585,12 @@ Define a **Protected Core Scope** that must survive any scope cut before 2026-03
   - Created `src/07_ingest_cdc_who_docs.py` to download locked sources and write `locked_doc_manifest.csv` for landing tracking.
   - Syntax sanity check passed for `src/07_ingest_cdc_who_docs.py`, `src/00_setup_env.py`, and `src/config.py`.
   - Updated `docs/execution_checklist.md`: B1 moved from `NS` to `IP`.
+- **Track B Run 1 (separate DAG) — B1 landing success:**
+  - Docs volume path: `/Volumes/bootcamp_students/health_equity_capstone_jpmajesty2019/cdc_who_docs`
+  - Manifest written: `/Volumes/bootcamp_students/health_equity_capstone_jpmajesty2019/cdc_who_docs/locked_doc_manifest.csv`
+  - Sources attempted: **5**
+  - Successful downloads: **5**
+  - Failed downloads: **0**
+- **Execution status update:** B1 is complete in practice; next focus is B2 (parse/chunk docs for Vector Search index preparation).
 
 
