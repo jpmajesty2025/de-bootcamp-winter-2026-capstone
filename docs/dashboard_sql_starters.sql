@@ -60,14 +60,27 @@ FROM
 GROUP BY
   measure_id
 
--- C2.2 modified: VISUAL: Top 10 counties by outcome burden (filter-ready via measure_id)
+-- C2.2 modified: VISUAL: Top 10 counties by outcome burden (filter-ready via measure_id, enforced in SQL)
+WITH ranked AS (
+  SELECT
+    measure_id,
+    state_abbr,
+    county_name,
+    data_value,
+    ROW_NUMBER() OVER (
+      PARTITION BY measure_id
+      ORDER BY data_value DESC
+    ) AS rn
+  FROM bootcamp_students.health_equity_capstone_jpmajesty2019.gold_health_equity_stats
+)
 SELECT
   measure_id,
   state_abbr,
   county_name,
   data_value
-FROM bootcamp_students.health_equity_capstone_jpmajesty2019.gold_health_equity_stats
-ORDER BY data_value DESC;
+FROM ranked
+WHERE rn <= 10
+ORDER BY measure_id, data_value DESC;
 
 -- C2.3 modified: VISUAL: Poverty vs outcome association (scatter, filter-ready via measure_id)
 SELECT

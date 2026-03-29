@@ -641,6 +641,7 @@ Define a **Protected Core Scope** that must survive any scope cut before 2026-03
   - Created `docs/dashboard_sql_starters.sql` with copy/paste-ready C2 visual queries and C3 reconciliation checks.
   - Updated C2 datasets for dashboard global filtering:
     - C2.2 modified to include `measure_id` and remove hardcoded single-measure filtering.
+    - C2.2 further updated to enforce true top-10-per-measure via `ROW_NUMBER() OVER (PARTITION BY measure_id ORDER BY data_value DESC)` and `WHERE rn <= 10`, resolving Databricks dashboard/Genie filter behavior.
     - C2.3 modified to include `measure_id` and remove hardcoded single-measure filtering.
     - C2.4 modified to include `measure_id` grouping for measure-aware filtering.
   - Updated `docs/execution_checklist.md`: C1 moved to `DONE`; C2 moved to `IP`.
