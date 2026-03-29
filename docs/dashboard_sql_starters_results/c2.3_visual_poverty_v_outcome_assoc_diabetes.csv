@@ -1,0 +1,1001 @@
+county_fips,state_abbr,county_name,poverty_pct,data_value
+12009,FL,Brevard,9.9,13.1
+12017,FL,Citrus,15.5,15.8
+20081,KS,Haskell,10.8,13.2
+27013,MN,Blue Earth,16.3,9.4
+36069,NY,Ontario,9.2,10.5
+40055,OK,Greer,14.7,13
+47173,TN,Union,13.9,14.6
+51009,VA,Amherst,10.8,15.1
+51015,VA,Augusta,7.3,13.2
+01095,AL,Marshall,16.3,12.4
+05061,AR,Howard,19.8,15.2
+06051,CA,Mono,11,10.5
+01039,AL,Covington,18,12.8
+05147,AR,Woodruff,22.8,18.3
+06011,CA,Colusa,10.8,13.4
+05057,AR,Hempstead,19,13.6
+05093,AR,Mississippi,21,13.4
+02122,AK,Kenai Peninsula,11.6,9.8
+05043,AR,Drew,22.7,13.5
+02185,AK,North Slope,8.3,10.8
+05145,AR,White,16.4,10.9
+01123,AL,Tallapoosa,15.2,16.8
+05031,AR,Craighead,19.1,11.6
+01007,AL,Bibb,20.5,16.2
+01061,AL,Geneva,19.1,16.4
+01075,AL,Lamar,15.1,16.7
+05101,AR,Newton,13.3,10.9
+05117,AR,Prairie,9.4,15.1
+05045,AR,Faulkner,15,10.8
+05041,AR,Desha,28.9,17.1
+05047,AR,Franklin,18.9,14.6
+01077,AL,Lauderdale,13.6,11
+01025,AL,Clarke,20.5,14.9
+02060,AK,Bristol Bay,9.7,9.1
+06033,CA,Lake,16.7,10.7
+01043,AL,Cullman,13.9,11
+05003,AR,Ashley,22.7,18.3
+06061,CA,Placer,6.7,7.9
+06003,CA,Alpine,12.3,8.5
+01113,AL,Russell,22.2,17.3
+02290,AK,Yukon-Koyukuk,20.8,13.9
+05103,AR,Ouachita,17.9,17.7
+05079,AR,Lincoln,17.7,13.5
+05005,AR,Baxter,14.5,10.3
+05035,AR,Crittenden,20.7,14.8
+05051,AR,Garland,16.5,14.8
+06037,CA,Los Angeles,13.6,11.6
+04025,AZ,Yavapai,12.6,8
+04001,AZ,Apache,31.2,15.3
+06015,CA,Del Norte,11.6,12.5
+05131,AR,Sebastian,16.3,11.5
+04012,AZ,La Paz,18.4,11.5
+01045,AL,Dale,18.7,15.8
+01029,AL,Cleburne,13.2,11.7
+02050,AK,Bethel,24,14.7
+01021,AL,Chilton,13.6,12
+01081,AL,Lee,18.9,12.7
+04021,AZ,Pinal,10.9,12.9
+06043,CA,Mariposa,13.9,13.5
+06001,CA,Alameda,9.2,11
+01059,AL,Franklin,17.4,16.4
+01133,AL,Winston,19.5,12.7
+05095,AR,Monroe,22.2,14.3
+05099,AR,Nevada,28.5,18.3
+05109,AR,Pike,18.8,14.4
+05113,AR,Polk,19,15.5
+02016,AK,Aleutians West,9.2,11.4
+02066,AK,Copper River,11.4,8.9
+05107,AR,Phillips,28.7,17.2
+05129,AR,Searcy,24.5,17.6
+01043,AL,Cullman,13.9,13.4
+05095,AR,Monroe,22.2,19.1
+05013,AR,Calhoun,13.3,14.6
+05099,AR,Nevada,28.5,14.2
+01031,AL,Coffee,17.6,12.7
+02070,AK,Dillingham,16.3,12.5
+05113,AR,Polk,19,11.8
+02050,AK,Bethel,24,13.8
+05061,AR,Howard,19.8,12.5
+01091,AL,Marengo,22.6,16.1
+04021,AZ,Pinal,10.9,10.9
+06041,CA,Marin,7.8,10.2
+05055,AR,Greene,17,12.5
+06015,CA,Del Norte,11.6,10.2
+01107,AL,Pickens,22.6,15.2
+02100,AK,Haines,6.1,10.8
+06031,CA,Kings,16.8,12.1
+05109,AR,Pike,18.8,11.4
+01081,AL,Lee,18.9,12.5
+05147,AR,Woodruff,22.8,13.7
+02275,AK,Wrangell,10.9,9.1
+06001,CA,Alameda,9.2,10.1
+04012,AZ,La Paz,18.4,17.5
+01029,AL,Cleburne,13.2,14.6
+05017,AR,Chicot,24.4,20.5
+02060,AK,Bristol Bay,9.7,11.3
+01109,AL,Pike,23.4,14.1
+05047,AR,Franklin,18.9,11.7
+02290,AK,Yukon-Koyukuk,20.8,16.5
+01083,AL,Limestone,10.1,10.9
+06065,CA,Riverside,11.1,11.3
+01039,AL,Covington,18,16.3
+05107,AR,Phillips,28.7,21.7
+05089,AR,Marion,17.8,11.1
+01085,AL,Lowndes,29.6,19.4
+05069,AR,Jefferson,20.6,15.1
+01007,AL,Bibb,20.5,13.9
+01077,AL,Lauderdale,13.6,12.9
+05065,AR,Izard,21.1,15.9
+02230,AK,Skagway,6.2,7.8
+06017,CA,El Dorado,8.3,10.8
+05057,AR,Hempstead,19,16.6
+06011,CA,Colusa,10.8,12.2
+01099,AL,Monroe,22.6,15.6
+01069,AL,Houston,18,13.1
+06043,CA,Mariposa,13.9,9.4
+05045,AR,Faulkner,15,10.9
+01091,AL,Marengo,22.6,19.8
+05127,AR,Scott,17.2,11.7
+01025,AL,Clarke,20.5,18.4
+05101,AR,Newton,13.3,15.3
+05031,AR,Craighead,19.1,11.2
+06035,CA,Lassen,13.7,10.6
+04027,AZ,Yuma,16.5,14.5
+04005,AZ,Coconino,17.7,9.8
+06037,CA,Los Angeles,13.6,12.6
+05027,AR,Columbia,22.7,13.5
+04003,AZ,Cochise,15.5,13.7
+05011,AR,Bradley,20.1,17.6
+01011,AL,Bullock,25.7,24.6
+05039,AR,Dallas,11.2,12.7
+01117,AL,Shelby,6.9,9.6
+02220,AK,Sitka,8.4,8.4
+06023,CA,Humboldt,18.9,11.4
+01027,AL,Clay,16.5,12.9
+05105,AR,Perry,15.6,10.8
+06009,CA,Calaveras,13.4,13.2
+05073,AR,Lafayette,27.2,20.6
+05149,AR,Yell,13.3,12.2
+05091,AR,Miller,21,13.1
+06021,CA,Glenn,12.4,11.1
+04007,AZ,Gila,17.8,10.5
+04015,AZ,Mohave,16.8,9.7
+01065,AL,Hale,23.9,16.3
+06039,CA,Madera,19.9,13.5
+05125,AR,Saline,9.1,11.3
+02068,AK,Denali,6.6,8.6
+05111,AR,Poinsett,20.1,14.6
+01079,AL,Lawrence,13.7,12.5
+01003,AL,Baldwin,10.5,13.4
+01049,AL,DeKalb,20.4,15.7
+04023,AZ,Santa Cruz,20.2,15.5
+04019,AZ,Pima,14.4,11
+02110,AK,Juneau,8.2,8.9
+01103,AL,Morgan,13.6,14.7
+01059,AL,Franklin,17.4,13.9
+05053,AR,Grant,12.3,12
+02164,AK,Lake and Peninsula,15.2,12.6
+02282,AK,Yakutat,7.8,10.6
+01033,AL,Colbert,16.9,15
+01051,AL,Elmore,10.3,13
+05103,AR,Ouachita,17.9,13.9
+01131,AL,Wilcox,29,19.1
+05083,AR,Logan,14.4,11.3
+06055,CA,Napa,8.4,11.4
+06019,CA,Fresno,18.7,12.7
+01047,AL,Dallas,29,18.1
+05143,AR,Washington,14.8,10.7
+01111,AL,Randolph,18.4,16.1
+05001,AR,Arkansas,14.7,12.1
+06045,CA,Mendocino,15.2,10.4
+05133,AR,Sevier,19.6,13.7
+05121,AR,Randolph,21.1,14.7
+01089,AL,Madison,10.5,12.1
+01013,AL,Butler,21,15.2
+06007,CA,Butte,18.3,9.9
+01129,AL,Washington,18.4,13.3
+05075,AR,Lawrence,18.2,12
+06041,CA,Marin,7.8,7.5
+05021,AR,Clay,17.2,14.1
+01097,AL,Mobile,16.3,16.1
+06007,CA,Butte,18.3,10.7
+06019,CA,Fresno,18.7,12.4
+01017,AL,Chambers,15.5,14.5
+02130,AK,Ketchikan Gateway,9.5,8.6
+05143,AR,Washington,14.8,10.1
+01003,AL,Baldwin,10.5,10.4
+06045,CA,Mendocino,15.2,13.7
+01111,AL,Randolph,18.4,12.7
+02198,AK,Prince of Wales-Hyder,15.1,11
+05043,AR,Drew,22.7,15.2
+05009,AR,Boone,13.4,13.1
+05033,AR,Crawford,16.8,10.9
+02158,AK,Kusilvak,31.2,16.5
+04019,AZ,Pima,14.4,9.5
+02068,AK,Denali,6.6,7.7
+06071,CA,San Bernardino,13.6,11.8
+02110,AK,Juneau,8.2,7.8
+01037,AL,Coosa,11.6,18.6
+06027,CA,Inyo,10.5,12.4
+06005,CA,Amador,7.8,11.8
+01055,AL,Etowah,17.1,16.3
+06069,CA,San Benito,7.8,10.5
+05037,AR,Cross,20.1,13.4
+05133,AR,Sevier,19.6,15.2
+05071,AR,Johnson,19.4,12.4
+01033,AL,Colbert,16.9,12.1
+06047,CA,Merced,18.4,13.3
+01127,AL,Walker,18,12.2
+01107,AL,Pickens,22.6,18
+05053,AR,Grant,12.3,9.8
+05105,AR,Perry,15.6,14.1
+04015,AZ,Mohave,16.8,14.2
+06035,CA,Lassen,13.7,11.5
+01041,AL,Crenshaw,16.2,16.6
+02130,AK,Ketchikan Gateway,9.5,10.1
+05135,AR,Sharp,17.3,11.7
+06013,CA,Contra Costa,8.3,11.3
+05019,AR,Clark,20.2,12.9
+05097,AR,Montgomery,20.8,11.4
+02063,AK,Chugach,4.8,9.6
+02090,AK,Fairbanks North Star,6.2,7.9
+05039,AR,Dallas,11.2,17.1
+01011,AL,Bullock,25.7,21.3
+06039,CA,Madera,19.9,12.8
+01049,AL,DeKalb,20.4,13.3
+05139,AR,Union,19.4,13
+05049,AR,Fulton,14.8,12.4
+04007,AZ,Gila,17.8,15
+01093,AL,Marion,16.8,15.5
+04003,AZ,Cochise,15.5,10.6
+05087,AR,Madison,15,11.3
+05001,AR,Arkansas,14.7,15.2
+05065,AR,Izard,21.1,12
+06025,CA,Imperial,19.6,14.6
+02195,AK,Petersburg,5.7,8.5
+02185,AK,North Slope,8.3,11
+01085,AL,Lowndes,29.6,24.1
+01099,AL,Monroe,22.6,19.7
+04027,AZ,Yuma,16.5,12.9
+02230,AK,Skagway,6.2,9.1
+05023,AR,Cleburne,13.8,15.1
+05123,AR,St. Francis,27.8,18.9
+01053,AL,Escambia,21.2,15.6
+05089,AR,Marion,17.8,16.4
+05115,AR,Pope,17.6,11.4
+05123,AR,St. Francis,27.8,16.6
+04013,AZ,Maricopa,11.3,10.6
+01031,AL,Coffee,17.6,14.8
+01101,AL,Montgomery,19.3,16.4
+02150,AK,Kodiak Island,7.7,9.3
+01115,AL,St. Clair,11.2,13
+01067,AL,Henry,15.8,12.8
+01105,AL,Perry,31.2,20.5
+05069,AR,Jefferson,20.6,17.6
+01109,AL,Pike,23.4,14.6
+06059,CA,Orange,9.5,11.5
+01015,AL,Calhoun,17.5,14.8
+05075,AR,Lawrence,18.2,14.4
+06057,CA,Nevada,10.6,11.5
+01001,AL,Autauga,10.7,11.4
+05007,AR,Benton,7.6,10.3
+06067,CA,Sacramento,12.6,11.2
+05129,AR,Searcy,24.5,12.5
+02070,AK,Dillingham,16.3,13
+02164,AK,Lake and Peninsula,15.2,14.6
+02275,AK,Wrangell,10.9,12.9
+06017,CA,El Dorado,8.3,8
+05017,AR,Chicot,24.4,16.1
+02016,AK,Aleutians West,9.2,10.8
+06031,CA,Kings,16.8,12.9
+04009,AZ,Graham,17.7,11.4
+01119,AL,Sumter,28.1,18.2
+05085,AR,Lonoke,11.1,10.1
+01075,AL,Lamar,15.1,12.9
+05059,AR,Hot Spring,17.1,13.9
+05051,AR,Garland,16.5,11.1
+02105,AK,Hoonah-Angoon,12.6,10.4
+05055,AR,Greene,17,11
+05013,AR,Calhoun,13.3,11.3
+01133,AL,Winston,19.5,16.5
+01063,AL,Greene,35.9,21.1
+04005,AZ,Coconino,17.7,9.3
+01123,AL,Tallapoosa,15.2,12.7
+01047,AL,Dallas,29,22.4
+01021,AL,Chilton,13.6,14.1
+05021,AR,Clay,17.2,11.1
+06005,CA,Amador,7.8,8.6
+01119,AL,Sumter,28.1,19.7
+05085,AR,Lonoke,11.1,11.3
+05091,AR,Miller,21,15.3
+01097,AL,Mobile,16.3,14.1
+06057,CA,Nevada,10.6,8
+01063,AL,Greene,35.9,27.1
+01067,AL,Henry,15.8,16.7
+06067,CA,Sacramento,12.6,10.3
+02195,AK,Petersburg,5.7,10.5
+05079,AR,Lincoln,17.7,13.8
+01045,AL,Dale,18.7,13.7
+02150,AK,Kodiak Island,7.7,9.8
+06061,CA,Placer,6.7,9.8
+02066,AK,Copper River,11.4,11.4
+01001,AL,Autauga,10.7,13.3
+06003,CA,Alpine,12.3,11.6
+01035,AL,Conecuh,27.6,22.1
+01101,AL,Montgomery,19.3,14.8
+05005,AR,Baxter,14.5,15
+05071,AR,Johnson,19.4,14.6
+01061,AL,Geneva,19.1,13
+04017,AZ,Navajo,24.7,12.3
+05041,AR,Desha,28.9,21.2
+06059,CA,Orange,9.5,10.1
+04017,AZ,Navajo,24.7,15.1
+05003,AR,Ashley,22.7,14.2
+05027,AR,Columbia,22.7,14.4
+06025,CA,Imperial,19.6,15
+01105,AL,Perry,31.2,24.6
+01053,AL,Escambia,21.2,18.5
+01115,AL,St. Clair,11.2,10.9
+05023,AR,Cleburne,13.8,10.7
+01095,AL,Marshall,16.3,14.5
+05117,AR,Prairie,9.4,11.3
+01113,AL,Russell,22.2,15.3
+05011,AR,Bradley,20.1,14.3
+01023,AL,Choctaw,19.5,15
+05137,AR,Stone,21.6,17
+05131,AR,Sebastian,16.3,13.1
+01015,AL,Calhoun,17.5,12.9
+02170,AK,Matanuska-Susitna,10.3,9
+06051,CA,Mono,11,8.9
+05093,AR,Mississippi,21,15.2
+06065,CA,Riverside,11.1,12.4
+02122,AK,Kenai Peninsula,11.6,7.9
+05137,AR,Stone,21.6,12
+02105,AK,Hoonah-Angoon,12.6,14.8
+01127,AL,Walker,18,15.1
+05007,AR,Benton,7.6,9.8
+05145,AR,White,16.4,12.6
+06047,CA,Merced,18.4,13
+05087,AR,Madison,15,13.9
+01051,AL,Elmore,10.3,11.4
+01073,AL,Jefferson,16.3,15.1
+05067,AR,Jackson,21.2,13.7
+05049,AR,Fulton,14.8,17.1
+02090,AK,Fairbanks North Star,6.2,8.3
+02020,AK,Anchorage,9.3,8.8
+06063,CA,Plumas,10.7,13.5
+05015,AR,Carroll,16.3,15
+05035,AR,Crittenden,20.7,16.5
+02013,AK,Aleutians East,12.4,12.8
+04013,AZ,Maricopa,11.3,9.6
+05149,AR,Yell,13.3,14.7
+02180,AK,Nome,21.1,13
+02240,AK,Southeast Fairbanks,13.3,10.2
+02063,AK,Chugach,4.8,8
+06063,CA,Plumas,10.7,9
+01057,AL,Fayette,18.7,16.6
+05097,AR,Montgomery,20.8,16.4
+05059,AR,Hot Spring,17.1,11.6
+06033,CA,Lake,16.7,14.1
+01037,AL,Coosa,11.6,13.5
+05135,AR,Sharp,17.3,16.2
+05025,AR,Cleveland,15.6,11.6
+05029,AR,Conway,20.6,12.4
+05141,AR,Van Buren,19.5,11.5
+05115,AR,Pope,17.6,12.7
+02020,AK,Anchorage,9.3,8.9
+05077,AR,Lee,27.7,19.7
+01121,AL,Talladega,17.7,14.2
+01055,AL,Etowah,17.1,13.4
+04001,AZ,Apache,31.2,17.5
+02158,AK,Kusilvak,31.2,18
+06053,CA,Monterey,12.6,12.5
+05033,AR,Crawford,16.8,13
+04025,AZ,Yavapai,12.6,12.1
+02170,AK,Matanuska-Susitna,10.3,8.3
+05077,AR,Lee,27.7,17.1
+06069,CA,San Benito,7.8,11.3
+05037,AR,Cross,20.1,16.1
+04011,AZ,Greenlee,10.8,10.6
+05119,AR,Pulaski,16.2,11.5
+05063,AR,Independence,19.6,11.4
+01071,AL,Jackson,16.8,16
+01009,AL,Blount,14.1,11.3
+05081,AR,Little River,16.5,12.4
+05009,AR,Boone,13.4,10.4
+05019,AR,Clark,20.2,12.9
+02198,AK,Prince of Wales-Hyder,15.1,14
+05139,AR,Union,19.4,16
+05063,AR,Independence,19.6,13.4
+06053,CA,Monterey,12.6,11.6
+06029,CA,Kern,19,13.3
+01093,AL,Marion,16.8,12.3
+06049,CA,Modoc,20.3,10.3
+01005,AL,Barbour,21.9,19.6
+01125,AL,Tuscaloosa,16.7,12
+06071,CA,San Bernardino,13.6,12.1
+05121,AR,Randolph,21.1,12.2
+01019,AL,Cherokee,14.5,16
+01087,AL,Macon,22.1,20
+02188,AK,Northwest Arctic,18.4,14.1
+06055,CA,Napa,8.4,9.3
+01017,AL,Chambers,15.5,17.9
+06029,CA,Kern,19,13.3
+01079,AL,Lawrence,13.7,15.5
+01009,AL,Blount,14.1,13.8
+04009,AZ,Graham,17.7,10.9
+01019,AL,Cherokee,14.5,11.8
+06023,CA,Humboldt,18.9,10
+02188,AK,Northwest Arctic,18.4,14.6
+05111,AR,Poinsett,20.1,12.1
+01129,AL,Washington,18.4,17
+02282,AK,Yakutat,7.8,13.7
+05067,AR,Jackson,21.2,15.4
+01005,AL,Barbour,21.9,16.5
+05081,AR,Little River,16.5,15.7
+06027,CA,Inyo,10.5,9.4
+04023,AZ,Santa Cruz,20.2,13.2
+06009,CA,Calaveras,13.4,9.1
+05083,AR,Logan,14.4,14.4
+01071,AL,Jackson,16.8,12.7
+01103,AL,Morgan,13.6,12.3
+01035,AL,Conecuh,27.6,16.8
+01089,AL,Madison,10.5,10.9
+01121,AL,Talladega,17.7,17.2
+02100,AK,Haines,6.1,7.7
+01057,AL,Fayette,18.7,13.1
+06013,CA,Contra Costa,8.3,9.6
+05073,AR,Lafayette,27.2,15.3
+01027,AL,Clay,16.5,16.5
+05025,AR,Cleveland,15.6,15
+02180,AK,Nome,21.1,13.7
+01023,AL,Choctaw,19.5,20.1
+05141,AR,Van Buren,19.5,16.2
+01083,AL,Limestone,10.1,12.5
+05015,AR,Carroll,16.3,11.4
+01041,AL,Crenshaw,16.2,13.4
+02013,AK,Aleutians East,12.4,12.9
+02220,AK,Sitka,8.4,9.9
+05119,AR,Pulaski,16.2,12.9
+01065,AL,Hale,23.9,19.7
+02240,AK,Southeast Fairbanks,13.3,9
+01125,AL,Tuscaloosa,16.7,12.4
+01131,AL,Wilcox,29,23.8
+01069,AL,Houston,18,15.7
+05125,AR,Saline,9.1,9.5
+01117,AL,Shelby,6.9,11.2
+04011,AZ,Greenlee,10.8,10.1
+05127,AR,Scott,17.2,14.8
+06049,CA,Modoc,20.3,14.9
+01073,AL,Jefferson,16.3,13.5
+05029,AR,Conway,20.6,15.6
+01087,AL,Macon,22.1,17.7
+01013,AL,Butler,21,18.9
+06021,CA,Glenn,12.4,12.6
+13057,GA,Cherokee,6.5,11
+13095,GA,Dougherty,26.4,19
+06081,CA,San Mateo,6.5,9
+09190,CT,Western Connecticut,7.4,7.4
+08123,CO,Weld,9,9.5
+12067,FL,Lafayette,17.8,14.6
+12055,FL,Highlands,15.4,18.3
+13051,GA,Chatham,14.3,13.1
+12087,FL,Monroe,10.4,9.7
+13103,GA,Effingham,7.4,11.3
+06097,CA,Sonoma,8.6,8.6
+13003,GA,Atkinson,25,16.5
+12107,FL,Putnam,23.9,13.4
+13023,GA,Bleckley,20.5,12.8
+08103,CO,Rio Blanco,9,8
+13141,GA,Hancock,31.5,18.3
+08095,CO,Phillips,15.7,9.6
+12091,FL,Okaloosa,9.3,9.6
+13061,GA,Clay,23,16.1
+08111,CO,San Juan,16.8,7.8
+13151,GA,Henry,9.4,12.4
+12121,FL,Suwannee,14.2,11.9
+13107,GA,Emanuel,24.7,14.7
+06101,CA,Sutter,14.8,12.8
+12125,FL,Union,18.7,14.5
+13099,GA,Early,21.1,15.4
+08073,CO,Lincoln,10.3,9.4
+12001,FL,Alachua,19.7,10.5
+12095,FL,Orange,13,11.7
+12069,FL,Lake,9.5,14.5
+12085,FL,Martin,11.4,13.6
+13149,GA,Heard,18.7,14.3
+12057,FL,Hillsborough,13.2,11.5
+12101,FL,Pasco,11.1,12.8
+10005,DE,Sussex,11.5,9.8
+13077,GA,Coweta,8.2,10.8
+09140,CT,Naugatuck Valley,10.3,10.6
+13065,GA,Clinch,22.9,17.3
+13047,GA,Catoosa,8.7,10.3
+12073,FL,Leon,18.5,11.3
+13109,GA,Evans,18.4,16.8
+12021,FL,Collier,10.5,9.5
+06113,CA,Yolo,16.3,10.1
+12039,FL,Gadsden,27.7,19.2
+13055,GA,Chattooga,20.1,13.5
+12083,FL,Marion,14.6,14.9
+13007,GA,Baker,29.4,16.9
+13129,GA,Gordon,12.9,13.9
+12111,FL,St. Lucie,11.6,14.5
+13033,GA,Burke,19.2,18.3
+13121,GA,Fulton,12.9,10.7
+06115,CA,Yuba,15.3,11.3
+08021,CO,Conejos,13.8,11
+12105,FL,Polk,14.7,11.8
+08089,CO,Otero,23.6,11.7
+12109,FL,St. Johns,6.7,8.2
+12031,FL,Duval,14.6,11.8
+08081,CO,Moffat,11.7,9.2
+13001,GA,Appling,23.8,14.6
+08119,CO,Teller,7.6,7.1
+13043,GA,Candler,17.5,13.9
+13083,GA,Dade,8.5,12.6
+08003,CO,Alamosa,18.2,11.2
+10001,DE,Kent,11.3,12.4
+13057,GA,Cherokee,6.5,9.5
+13095,GA,Dougherty,26.4,17.1
+08055,CO,Huerfano,17.5,9.4
+12055,FL,Highlands,15.4,12.6
+06075,CA,San Francisco,10.6,9.3
+08039,CO,Elbert,5.3,6.9
+13027,GA,Brooks,25.4,15.7
+13045,GA,Carroll,15.6,12.8
+13097,GA,Douglas,11.3,13.6
+13115,GA,Floyd,16.8,12.6
+12039,FL,Gadsden,27.7,15.6
+12043,FL,Glades,21.2,14.4
+13081,GA,Crisp,24.1,16
+13021,GA,Bibb,24.8,15.2
+06079,CA,San Luis Obispo,12.8,10
+12021,FL,Collier,10.5,13.7
+12089,FL,Nassau,9.2,8.6
+10003,DE,New Castle,10.2,12.2
+12013,FL,Calhoun,21.2,15.2
+12113,FL,Santa Rosa,8.4,10.9
+13067,GA,Cobb,8.5,10.1
+06095,CA,Solano,9.7,12.1
+08045,CO,Garfield,9.1,8.9
+13117,GA,Forsyth,4.5,9.9
+12037,FL,Franklin,17.3,15.3
+08029,CO,Delta,14.2,12.4
+13015,GA,Bartow,10.1,10.8
+13145,GA,Harris,7.4,9.9
+12129,FL,Wakulla,5.6,10.8
+13011,GA,Banks,12.8,11.5
+13151,GA,Henry,9.4,13.4
+08065,CO,Lake,7.2,7.8
+09130,CT,Lower Connecticut River Valley,6.9,7.3
+13029,GA,Bryan,7.2,10
+12029,FL,Dixie,19.3,16.1
+13143,GA,Haralson,15.1,12.6
+08069,CO,Larimer,11.1,6.9
+13013,GA,Barrow,10.2,11.6
+08061,CO,Kiowa,12.8,8.3
+08047,CO,Gilpin,10,7.3
+13119,GA,Franklin,20.4,12.4
+12049,FL,Hardee,24.3,15.6
+12099,FL,Palm Beach,11.1,10.6
+08031,CO,Denver,11.2,7.8
+12045,FL,Gulf,11.6,14.1
+08021,CO,Conejos,13.8,13.8
+08123,CO,Weld,9,9.3
+13001,GA,Appling,23.8,17.4
+13155,GA,Irwin,18.1,13.5
+08007,CO,Archuleta,8.3,11.7
+06107,CA,Tulare,17.8,13.1
+08085,CO,Montrose,11.9,8.5
+08077,CO,Mesa,11.2,8.1
+13063,GA,Clayton,16.8,16.1
+06111,CA,Ventura,9,11.4
+13161,GA,Jeff Davis,26.6,14.4
+12063,FL,Jackson,18.8,15.6
+06095,CA,Solano,9.7,10.5
+13149,GA,Heard,18.7,11.9
+09180,CT,Southeastern Connecticut,10.6,10
+13107,GA,Emanuel,24.7,16.4
+12115,FL,Sarasota,8.2,8.4
+08083,CO,Montezuma,13.2,11.8
+08075,CO,Logan,13.1,11.2
+12133,FL,Washington,18.9,15.1
+12129,FL,Wakulla,5.6,12.6
+13111,GA,Fannin,12,11.1
+13099,GA,Early,21.1,18.9
+13007,GA,Baker,29.4,22.9
+13121,GA,Fulton,12.9,10.9
+12095,FL,Orange,13,11.5
+08023,CO,Costilla,22.3,17
+12111,FL,St. Lucie,11.6,11.2
+13087,GA,Decatur,24.8,15.3
+13065,GA,Clinch,22.9,14.8
+09170,CT,South Central Connecticut,11.6,9.2
+13047,GA,Catoosa,8.7,12.5
+12019,FL,Clay,9.1,10.3
+08041,CO,El Paso,8.5,8.4
+08019,CO,Clear Creek,6.8,9
+12033,FL,Escambia,14.5,12.8
+08105,CO,Rio Grande,14.9,12.2
+13003,GA,Atkinson,25,18
+12091,FL,Okaloosa,9.3,10.8
+13125,GA,Glascock,12.2,11.8
+13061,GA,Clay,23,21.5
+08025,CO,Crowley,18.2,11.3
+08015,CO,Chaffee,10,10.2
+12101,FL,Pasco,11.1,10.3
+08057,CO,Jackson,18.2,13.9
+12113,FL,Santa Rosa,8.4,9.3
+08009,CO,Baca,24.1,13.4
+08013,CO,Boulder,11.4,7.1
+13073,GA,Columbia,6.8,10.7
+12023,FL,Columbia,17,15.1
+13103,GA,Effingham,7.4,10.6
+08097,CO,Pitkin,7.2,8.4
+13163,GA,Jefferson,18.8,15.5
+08113,CO,San Miguel,8.4,8.7
+13037,GA,Calhoun,22.7,18.5
+13051,GA,Chatham,14.3,12.1
+13025,GA,Brantley,16.9,14.4
+06079,CA,San Luis Obispo,12.8,8.6
+12117,FL,Seminole,9.2,9.8
+08005,CO,Arapahoe,8.5,8.5
+10001,DE,Kent,11.3,14.3
+08059,CO,Jefferson,6.7,8.3
+12119,FL,Sumter,9.1,16
+08001,CO,Adams,9.4,9.7
+09110,CT,Capitol,10.3,11
+13141,GA,Hancock,31.5,22.8
+12107,FL,Putnam,23.9,17.5
+08067,CO,La Plata,12.4,9.3
+12075,FL,Levy,17.2,16.1
+12079,FL,Madison,20.9,16.8
+12103,FL,Pinellas,11.4,13.1
+13153,GA,Houston,10.1,12.2
+13137,GA,Habersham,13.6,12.9
+08091,CO,Ouray,5,10
+08063,CO,Kit Carson,9.1,11.4
+12059,FL,Holmes,14.4,14.5
+13019,GA,Berrien,22.1,13.5
+08067,CO,La Plata,12.4,7.5
+08121,CO,Washington,7.6,10.5
+13163,GA,Jefferson,18.8,18.5
+13101,GA,Echols,12.4,13.6
+12115,FL,Sarasota,8.2,13
+06075,CA,San Francisco,10.6,10.2
+09160,CT,Northwest Hills,9.2,10
+08005,CO,Arapahoe,8.5,8
+13127,GA,Glynn,16.3,12
+08079,CO,Mineral,13,10.5
+06113,CA,Yolo,16.3,9.3
+13005,GA,Bacon,20.9,13
+13069,GA,Coffee,19.8,15
+08071,CO,Las Animas,17.4,13.7
+09150,CT,Northeastern Connecticut,8.6,8
+06105,CA,Trinity,18,15.9
+12029,FL,Dixie,19.3,12.3
+13145,GA,Harris,7.4,12.6
+08037,CO,Eagle,8.3,7.5
+13133,GA,Greene,8.8,15.6
+08019,CO,Clear Creek,6.8,6.8
+12001,FL,Alachua,19.7,11.2
+12017,FL,Citrus,15.5,10.2
+12037,FL,Franklin,17.3,11.2
+13117,GA,Forsyth,4.5,8.8
+12049,FL,Hardee,24.3,14.4
+10005,DE,Sussex,11.5,14.2
+12045,FL,Gulf,11.6,10.9
+12099,FL,Palm Beach,11.1,13.7
+13059,GA,Clarke,25.9,13.3
+08107,CO,Routt,6.4,6.8
+13053,GA,Chattahoochee,16.2,7.5
+12009,FL,Brevard,9.9,10
+11001,DC,District of Columbia,14.5,7.8
+06087,CA,Santa Cruz,11.2,9
+08101,CO,Pueblo,15.4,12.3
+08049,CO,Grand,9,9.1
+13037,GA,Calhoun,22.7,17.1
+08033,CO,Dolores,18.8,11.5
+06077,CA,San Joaquin,12.6,11.7
+13159,GA,Jasper,14,12.1
+08053,CO,Hinsdale,4.5,6.4
+06091,CA,Sierra,12.3,10.1
+13157,GA,Jackson,8.3,10.4
+08109,CO,Saguache,17.6,15.1
+13147,GA,Hart,11.5,15.3
+08093,CO,Park,7.2,10.2
+08041,CO,El Paso,8.5,8.7
+13091,GA,Dodge,22.2,16.7
+08025,CO,Crowley,18.2,11
+08027,CO,Custer,9.7,7.8
+12041,FL,Gilchrist,11.2,12.8
+08087,CO,Morgan,12.3,10.9
+13049,GA,Charlton,22.5,15.4
+13105,GA,Elbert,20.6,16.6
+08043,CO,Fremont,14,9.3
+12083,FL,Marion,14.6,10.9
+12079,FL,Madison,20.9,13.3
+12067,FL,Lafayette,17.8,12.8
+06073,CA,San Diego,10.4,9.4
+13021,GA,Bibb,24.8,16.9
+08083,CO,Montezuma,13.2,8.9
+12053,FL,Hernando,12,14.9
+06083,CA,Santa Barbara,13.8,10.8
+12063,FL,Jackson,18.8,13.1
+13043,GA,Candler,17.5,16.5
+08117,CO,Summit,7.4,7.9
+12027,FL,DeSoto,23.1,17.6
+13085,GA,Dawson,9.2,9.6
+06073,CA,San Diego,10.4,10
+09120,CT,Greater Bridgeport,13.2,10.3
+12119,FL,Sumter,9.1,9.1
+12003,FL,Baker,13.1,12.3
+12127,FL,Volusia,12.2,13.5
+13019,GA,Berrien,22.1,16
+12065,FL,Jefferson,20.3,16.3
+08125,CO,Yuma,15,10.9
+12035,FL,Flagler,9.4,13.7
+08121,CO,Washington,7.6,8.2
+08087,CO,Morgan,12.3,9.9
+08017,CO,Cheyenne,11.4,11.3
+12103,FL,Pinellas,11.4,9.8
+06077,CA,San Joaquin,12.6,12.3
+08011,CO,Bent,31.7,14.7
+12023,FL,Columbia,17,12.4
+08097,CO,Pitkin,7.2,6.5
+06083,CA,Santa Barbara,13.8,10.3
+12005,FL,Bay,11.7,10
+08113,CO,San Miguel,8.4,7.1
+13059,GA,Clarke,25.9,10.9
+13123,GA,Gilmer,14.7,10.8
+13025,GA,Brantley,16.9,11.9
+12033,FL,Escambia,14.5,11.4
+12013,FL,Calhoun,21.2,12.8
+13133,GA,Greene,8.8,10.9
+13125,GA,Glascock,12.2,14.5
+08057,CO,Jackson,18.2,9.8
+06091,CA,Sierra,12.3,15.3
+06087,CA,Santa Cruz,11.2,10.2
+13073,GA,Columbia,6.8,11.9
+12097,FL,Osceola,12.5,13.4
+13153,GA,Houston,10.1,13.1
+12071,FL,Lee,11.7,14.5
+13137,GA,Habersham,13.6,11.1
+13017,GA,Ben Hill,25.7,16
+13165,GA,Jenkins,23.6,16.3
+12086,FL,Miami-Dade,14.9,15.4
+08105,CO,Rio Grande,14.9,9.6
+08053,CO,Hinsdale,4.5,10
+13111,GA,Fannin,12,16.5
+13087,GA,Decatur,24.8,17.8
+13157,GA,Jackson,8.3,11.6
+08079,CO,Mineral,13,7.3
+13035,GA,Butts,12.9,13.8
+12081,FL,Manatee,10.4,14
+11001,DC,District of Columbia,14.5,8.5
+12061,FL,Indian River,11.4,9.5
+08014,CO,Broomfield,5,6.5
+08071,CO,Las Animas,17.4,10.4
+06105,CA,Trinity,18,10.7
+09160,CT,Northwest Hills,9.2,7.9
+12077,FL,Liberty,20.8,13
+12051,FL,Hendry,21.6,16.8
+12123,FL,Taylor,17.3,12.8
+13113,GA,Fayette,5.5,10
+13031,GA,Bulloch,22.5,12.9
+13089,GA,DeKalb,13.5,13
+06089,CA,Shasta,13,9.4
+09180,CT,Southeastern Connecticut,10.6,8.8
+13039,GA,Camden,15,12.3
+13075,GA,Cook,20.5,16.5
+06103,CA,Tehama,15.4,10.6
+12053,FL,Hernando,12,11.2
+13135,GA,Gwinnett,10.5,12.6
+08063,CO,Kit Carson,9.1,9.1
+12086,FL,Miami-Dade,14.9,13.3
+12005,FL,Bay,11.7,11.9
+13049,GA,Charlton,22.5,16.1
+09110,CT,Capitol,10.3,9.2
+12131,FL,Walton,11.4,9.7
+08001,CO,Adams,9.4,9.9
+08009,CO,Baca,24.1,10
+08109,CO,Saguache,17.6,10.7
+12125,FL,Union,18.7,12.9
+13147,GA,Hart,11.5,11.9
+08093,CO,Park,7.2,7.2
+12109,FL,St. Johns,6.7,10.6
+13091,GA,Dodge,22.2,13.9
+13131,GA,Grady,20.6,14
+12031,FL,Duval,14.6,12.8
+12041,FL,Gilchrist,11.2,10.2
+08033,CO,Dolores,18.8,8.8
+13079,GA,Crawford,13.3,15.5
+08049,CO,Grand,9,7.2
+08015,CO,Chaffee,10,7.8
+13123,GA,Gilmer,14.7,15.2
+08023,CO,Costilla,22.3,12.1
+13093,GA,Dooly,19.7,18.3
+13105,GA,Elbert,20.6,13.3
+13071,GA,Colquitt,23.9,14.8
+06085,CA,Santa Clara,6.9,9.8
+13053,GA,Chattahoochee,16.2,14.2
+08101,CO,Pueblo,15.4,10.4
+08037,CO,Eagle,8.3,8.5
+06109,CA,Tuolumne,10.7,12.1
+13005,GA,Bacon,20.9,14.9
+13069,GA,Coffee,19.8,16.1
+12019,FL,Clay,9.1,12.2
+12059,FL,Holmes,14.4,11.9
+09170,CT,South Central Connecticut,11.6,10.4
+06099,CA,Stanislaus,13.1,11.2
+12071,FL,Lee,11.7,10.8
+13101,GA,Echols,12.4,12.3
+13159,GA,Jasper,14,14.6
+12011,FL,Broward,12.2,13.5
+12075,FL,Levy,17.2,11.9
+12085,FL,Martin,11.4,9.4
+06107,CA,Tulare,17.8,13.1
+09130,CT,Lower Connecticut River Valley,6.9,9.4
+12123,FL,Taylor,17.3,15.9
+13055,GA,Chattooga,20.1,16
+13155,GA,Irwin,18.1,16.2
+08055,CO,Huerfano,17.5,13.9
+13033,GA,Burke,19.2,15.2
+08039,CO,Elbert,5.3,8.9
+08035,CO,Douglas,3.2,6.8
+08073,CO,Lincoln,10.3,10.8
+13113,GA,Fayette,5.5,12.6
+13127,GA,Glynn,16.3,15.3
+12069,FL,Lake,9.5,10.9
+08081,CO,Moffat,11.7,10.8
+06109,CA,Tuolumne,10.7,8.9
+13089,GA,DeKalb,13.5,12.3
+08115,CO,Sedgwick,14.5,9
+08047,CO,Gilpin,10,9.6
+12057,FL,Hillsborough,13.2,12.5
+08031,CO,Denver,11.2,7.1
+08027,CO,Custer,9.7,12.4
+08043,CO,Fremont,14,11.4
+08051,CO,Gunnison,13.1,7.1
+08014,CO,Broomfield,5,7.1
+13109,GA,Evans,18.4,14.8
+12061,FL,Indian River,11.4,14.3
+06093,CA,Siskiyou,16.6,9.9
+13129,GA,Gordon,12.9,12.2
+06099,CA,Stanislaus,13.1,11.9
+13031,GA,Bulloch,22.5,11.5
+06085,CA,Santa Clara,6.9,10.5
+13017,GA,Ben Hill,25.7,19.1
+13165,GA,Jenkins,23.6,18.2
+06093,CA,Siskiyou,16.6,13.9
+13009,GA,Baldwin,22,15.3
+08115,CO,Sedgwick,14.5,13
+13139,GA,Hall,12.7,11.8
+10003,DE,New Castle,10.2,10.7
+08011,CO,Bent,31.7,13.1
+13023,GA,Bleckley,20.5,14.7
+08107,CO,Routt,6.4,8.3
+06103,CA,Tehama,15.4,13
+12093,FL,Okeechobee,19,15.6
+08099,CO,Prowers,17.2,12.6
+13015,GA,Bartow,10.1,12
+13085,GA,Dawson,9.2,11.6
+12065,FL,Jefferson,20.3,12.2
+08125,CO,Yuma,15,9.2
+12089,FL,Nassau,9.2,11.6
+12007,FL,Bradford,19.1,14.4
+08017,CO,Cheyenne,11.4,8.7
+12043,FL,Glades,21.2,17.7
+12077,FL,Liberty,20.8,14.3
+12087,FL,Monroe,10.4,13.2
+08089,CO,Otero,23.6,14.5
+12011,FL,Broward,12.2,11.4
+08117,CO,Summit,7.4,7.2
+12127,FL,Volusia,12.2,10.3
+12015,FL,Charlotte,9.6,15.6
+13035,GA,Butts,12.9,12.6
+06089,CA,Shasta,13,11.7
+12073,FL,Leon,18.5,10.6
+12081,FL,Manatee,10.4,10.1
+12047,FL,Hamilton,27.3,17.6
+12003,FL,Baker,13.1,11
+08007,CO,Archuleta,8.3,8
+13143,GA,Haralson,15.1,11
+06115,CA,Yuba,15.3,11
+08069,CO,Larimer,11.1,7.3
+08059,CO,Jefferson,6.7,7.2
+08077,CO,Mesa,11.2,9.8
+13063,GA,Clayton,16.8,16.2
+13119,GA,Franklin,20.4,14.7
+08119,CO,Teller,7.6,10.2
+08051,CO,Gunnison,13.1,7.1
+08091,CO,Ouray,5,6.6
+13131,GA,Grady,20.6,17.2
+08065,CO,Lake,7.2,8.4
+12093,FL,Okeechobee,19,12.8
+08013,CO,Boulder,11.4,6.7
+12051,FL,Hendry,21.6,16.1
+12047,FL,Hamilton,27.3,14.7
+13009,GA,Baldwin,22,14.5
+13013,GA,Barrow,10.2,12.2
+13093,GA,Dooly,19.7,15.2
+12105,FL,Polk,14.7,13.6
+13161,GA,Jeff Davis,26.6,16.4
+08099,CO,Prowers,17.2,10.8
+13067,GA,Cobb,8.5,10.9
+08061,CO,Kiowa,12.8,11.8
+08045,CO,Garfield,9.1,8.1
+12097,FL,Osceola,12.5,12.7
+08029,CO,Delta,14.2,8.8
+12121,FL,Suwannee,14.2,15
+13135,GA,Gwinnett,10.5,12
+06101,CA,Sutter,14.8,11.4
+13011,GA,Banks,12.8,13.8
+09140,CT,Naugatuck Valley,10.3,8.8
+12117,FL,Seminole,9.2,11
+08111,CO,San Juan,16.8,10.2
+13029,GA,Bryan,7.2,9.8
+13115,GA,Floyd,16.8,14.1
+13027,GA,Brooks,25.4,20
+08095,CO,Phillips,15.7,11.9
+12131,FL,Walton,11.4,12.3
+13045,GA,Carroll,15.6,12.2
+09150,CT,Northeastern Connecticut,8.6,10.3
+12133,FL,Washington,18.9,12.6
+13081,GA,Crisp,24.1,19.4
+08103,CO,Rio Blanco,9,9.6
+13139,GA,Hall,12.7,13.2
+13075,GA,Cook,20.5,14.4
+06097,CA,Sonoma,8.6,10.7
+09120,CT,Greater Bridgeport,13.2,9.2
+12035,FL,Flagler,9.4,9.3
+13079,GA,Crawford,13.3,12.1
+08085,CO,Montrose,11.9,11.5
+12015,FL,Charlotte,9.6,9.8
+13097,GA,Douglas,11.3,12.7
+06111,CA,Ventura,9,9.9
+13071,GA,Colquitt,23.9,16.7
+13039,GA,Camden,15,11.7
+12027,FL,DeSoto,23.1,14.7
+08075,CO,Logan,13.1,9.8
+12007,FL,Bradford,19.1,12.4
+13077,GA,Coweta,8.2,12.4
+08035,CO,Douglas,3.2,6
+09190,CT,Western Connecticut,7.4,8.5
+13083,GA,Dade,8.5,10.2
+06081,CA,San Mateo,6.5,10.6
+08003,CO,Alamosa,18.2,11.3
+17145,IL,Perry,16.9,13.2
+17097,IL,Lake,8.1,9.8
+13289,GA,Twiggs,14.9,13.7
+15005,HI,Kalawao,31.7,12.9
+17195,IL,Whiteside,12.1,10.2
+16039,ID,Elmore,12.4,10.4
+16049,ID,Idaho,10.8,12.8
+17029,IL,Coles,18.4,10.4
+17183,IL,Vermilion,17.2,14.4
+13199,GA,Meriwether,19.7,14
+13233,GA,Polk,19.4,12.5
+17033,IL,Crawford,11.6,12.1
+16055,ID,Kootenai,9.3,8
+13207,GA,Monroe,11.4,13.1
+17065,IL,Hamilton,12.5,13.9
+13169,GA,Jones,13.5,12
+17039,IL,De Witt,10.1,9.6
+16047,ID,Gooding,15.3,13
+17085,IL,Jo Daviess,8,9
+17159,IL,Richland,11.9,12.5
+13281,GA,Towns,12.9,10.3
+17079,IL,Jasper,8.7,12
+17131,IL,Mercer,7.9,12.4
+17143,IL,Peoria,15.4,10.9
+13191,GA,McIntosh,22.4,20.4
+13221,GA,Oglethorpe,11.2,14.1
+17191,IL,Wayne,13.8,10.5
+15001,HI,Hawaii,14.6,12.5
+13223,GA,Paulding,6.1,10.9
+13263,GA,Talbot,21.6,22.1
+13219,GA,Oconee,6.1,8.3
+16003,ID,Adams,15,9.3
+16059,ID,Lemhi,11.8,8.6
+13229,GA,Pierce,13.2,14.3
+17025,IL,Clay,16.7,10.9
+15009,HI,Maui,9.8,9.6
+17013,IL,Calhoun,5.8,11.9
+13217,GA,Newton,12.3,14.4
+13279,GA,Toombs,19.7,13.6
+17171,IL,Scott,10.6,9.4
+17107,IL,Logan,13.7,11.6
+17173,IL,Shelby,10,13
+16009,ID,Benewah,15,13.5
+13259,GA,Stewart,27.8,17.9
+17095,IL,Knox,15.9,13.5
+16017,ID,Bonner,10.7,8.4
+13205,GA,Mitchell,25.5,15.6
+16005,ID,Bannock,12.2,9.7
+13315,GA,Wilcox,23.1,17.4
+17185,IL,Wabash,14.1,10.4
+17117,IL,Macoupin,14.4,12.8

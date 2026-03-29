@@ -1,0 +1,9 @@
+poverty_band,health_burden_band,county_count
+high_poverty,high,76
+high_poverty,low,12
+high_poverty,moderate,423
+lower_poverty,low,798
+lower_poverty,moderate,1047
+moderate_poverty,high,5
+moderate_poverty,low,223
+moderate_poverty,moderate,1291

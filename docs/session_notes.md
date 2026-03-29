@@ -639,7 +639,11 @@ Define a **Protected Core Scope** that must survive any scope cut before 2026-03
 - **Track C progress update (2026-03-29):**
   - Created `docs/dashboard_kpi_shortlist.md` with KPI shortlist, visual plan, SQL starters, and dashboard guardrails mapped to the 3 demo questions.
   - Created `docs/dashboard_sql_starters.sql` with copy/paste-ready C2 visual queries and C3 reconciliation checks.
+  - Updated C2 datasets for dashboard global filtering:
+    - C2.2 modified to include `measure_id` and remove hardcoded single-measure filtering.
+    - C2.3 modified to include `measure_id` and remove hardcoded single-measure filtering.
+    - C2.4 modified to include `measure_id` grouping for measure-aware filtering.
   - Updated `docs/execution_checklist.md`: C1 moved to `DONE`; C2 moved to `IP`.
-- **Next focus:** run C2 queries in Databricks SQL to build dashboard visuals, then execute C3 reconciliation checks and capture evidence.
+- **Next focus:** continue C2 dashboard wiring in Databricks (global `measure_id` filter + visuals), then execute C3 reconciliation checks and capture evidence.
 
 

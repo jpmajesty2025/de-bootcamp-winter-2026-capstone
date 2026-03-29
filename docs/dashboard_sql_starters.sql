@@ -17,36 +17,77 @@ SELECT
   COUNT(DISTINCT CASE WHEN health_burden_band IN ('high', 'very_high') THEN county_fips END) AS high_burden_counties
 FROM bootcamp_students.health_equity_capstone_jpmajesty2019.gold_health_equity_stats
 WHERE measure_id = 'DIABETES';
+ 
+ -- C2.1a modified: KPI TILE: Core metrics by measure (for parameter-driven dashboard)
+ SELECT
+  measure_id,
+  AVG(data_value) AS avg_outcome_value,
+  AVG(poverty_pct) AS avg_poverty_pct,
+  AVG(median_household_income) AS avg_median_household_income,
+  COUNT(DISTINCT
+    CASE
+      WHEN health_burden_band IN ('high', 'very_high') THEN county_fips
+    END
+  ) AS high_burden_counties
+FROM
+  bootcamp_students.health_equity_capstone_jpmajesty2019.gold_health_equity_stats
+GROUP BY
+  measure_id
 
--- C2.2 VISUAL: Top 10 counties by outcome burden
+
+-- C2.1b: KPI TILE: Core metrics by measure with high burden focus (for parameter-driven dashboard)
 SELECT
+  measure_id,
+  AVG(data_value) AS avg_outcome_value,
+  AVG(
+    CASE
+      WHEN health_burden_band IN ('high', 'very_high') THEN poverty_pct
+    END
+  )
+    / 100 AS avg_poverty_pct_high_burden,
+  AVG(
+    CASE
+      WHEN health_burden_band IN ('high', 'very_high') THEN median_household_income
+    END
+  ) AS avg_median_income_high_burden,
+  COUNT(DISTINCT
+    CASE
+      WHEN health_burden_band IN ('high', 'very_high') THEN county_fips
+    END
+  ) AS high_burden_counties
+FROM
+  bootcamp_students.health_equity_capstone_jpmajesty2019.gold_health_equity_stats
+GROUP BY
+  measure_id
+
+-- C2.2 modified: VISUAL: Top 10 counties by outcome burden (filter-ready via measure_id)
+SELECT
+  measure_id,
   state_abbr,
   county_name,
   data_value
 FROM bootcamp_students.health_equity_capstone_jpmajesty2019.gold_health_equity_stats
-WHERE measure_id = 'DIABETES'
-ORDER BY data_value DESC
-LIMIT 10;
+ORDER BY data_value DESC;
 
--- C2.3 VISUAL: Poverty vs outcome association (scatter)
+-- C2.3 modified: VISUAL: Poverty vs outcome association (scatter, filter-ready via measure_id)
 SELECT
+  measure_id,
   county_fips,
   state_abbr,
   county_name,
   poverty_pct,
   data_value
-FROM bootcamp_students.health_equity_capstone_jpmajesty2019.gold_health_equity_stats
-WHERE measure_id = 'DIABETES';
+FROM bootcamp_students.health_equity_capstone_jpmajesty2019.gold_health_equity_stats;
 
--- C2.4 VISUAL: Burden distribution by poverty band
+-- C2.4 modified: VISUAL: Burden distribution by poverty band (filter-ready via measure_id)
 SELECT
+  measure_id,
   poverty_band,
   health_burden_band,
   COUNT(DISTINCT county_fips) AS county_count
 FROM bootcamp_students.health_equity_capstone_jpmajesty2019.gold_health_equity_stats
-WHERE measure_id = 'DIABETES'
-GROUP BY poverty_band, health_burden_band
-ORDER BY poverty_band, health_burden_band;
+GROUP BY measure_id, poverty_band, health_burden_band
+ORDER BY measure_id, poverty_band, health_burden_band;
 
 -- C2.5 VISUAL (proxy): Community income bands vs outcomes
 WITH county_proxy AS (
