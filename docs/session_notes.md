@@ -615,19 +615,21 @@ Define a **Protected Core Scope** that must survive any scope cut before 2026-03
 - **Idempotency confirmation (B2 tables):**
   - Writes to `CHUNKED_DOCS_TABLE` and `RAW_DOCS_TABLE` use `.mode("overwrite").option("overwriteSchema","true").saveAsTable(...)`.
   - Therefore, rerunning `src/08_parse_and_chunk_docs.py` replaces prior snapshots for those tables (no duplicate accumulation from repeat runs under this full-refresh pattern).
-- **B3 kickoff progress (2026-03-29):**
-  - Added Vector Search config constants in `src/config.py`:
-    - `VS_ENDPOINT_NAME`
-    - `VS_INDEX_NAME`
-    - `VS_EMBEDDING_MODEL_ENDPOINT`
-  - Created `src/09_create_vector_index.py` to:
-    - enable CDF on `chunked_docs`
-    - create/verify Vector Search endpoint (idempotent)
-    - create/verify Delta Sync index on `chunked_docs` (idempotent, `chunk_id` PK, `chunk_text` embedding source)
-    - poll index status until no longer provisioning/building
-  - Local syntax check passed for `src/config.py` and `src/09_create_vector_index.py`.
+- **B3 Vector Search deployment result (2026-03-29):**
+  - Ran `src/09_create_vector_index.py` in Databricks successfully.
+  - Endpoint created: `health_equity_vs_endpoint`.
+  - Index created: `bootcamp_students.health_equity_capstone_jpmajesty2019.cdc_who_docs_index`.
+  - Final index status: `ONLINE_NO_PENDING_UPDATE`, `ready=True`, `indexed_row_count=1785`.
+  - Smoke query returned results successfully (top-3 rows returned with scores).
+  - **B3 status: COMPLETE**
+- **B3 follow-up quality note:**
+  - Retrieval results include HTML/JS boilerplate fragments for some chunks.
+  - Action: add stronger HTML/boilerplate cleanup in parse/chunk flow before B5 quality validation.
+- **Databricks Git formatting quirk observed:**
+  - `src/09_create_vector_index.py` did not always render as a clean Python notebook cell when pulled via Databricks Git folder.
+  - Workaround used: replace malformed cell content with manual copy/paste from local file.
 - **Engineering guardrails codified (2026-03-29):**
   - Added `docs/engineering_guardrails.md` as a default operating standard for idempotency-by-default, retry-safe infra patterns, and senior engineering quality gates across data/backend/software work.
-- **Next focus:** run `src/09_create_vector_index.py` in Databricks and capture endpoint/index readiness evidence.
+- **Next focus:** B4 — configure/build Agent Bricks Knowledge Assistant on the completed Vector Search index.
 
 
