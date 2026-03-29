@@ -1,8 +1,8 @@
 # Execution Checklist — Capstone MVP Sprint
 
-**Date:** 2026-03-26  
+**Date:** 2026-03-29  
 **POC:** Capstone Student  
-**TL;DR:** Execute protected-core MVP by 2026-03-28: reliable medallion pipeline, dashboard-first demo, citation-grounded agent workflow, lean eval gate, and cloud runbook.
+**TL;DR:** A0–A6 and B1–B2 are complete; next critical path is B3 Vector Search indexing, then B4/B5 agent validation, dashboard build, and lean eval/demo hardening.
 
 ---
 
@@ -62,7 +62,7 @@
 |---|---|---|---|---|---|---|---|
 | B1 | Land locked 5 CDC/WHO source docs into Unity Catalog Volume (with fallbacks) | P0 | DONE | You | 2–3h | None | All 5 sources landed and tracked in UC Volume |
 | B2 | Parse and chunk locked docs into Delta tables (`raw_docs`, `chunked_docs`) | P0 | DONE | You | 1–2h | B1 | Run completes with 5 raw docs + chunked rows written and distinct doc coverage confirmed |
-| B3 | Deploy Delta Sync Vector Search index on `chunked_docs` | P0 | NS | You | 1–2h | B2 | Index is online/synced and queryable with relevant retrieval results |
+| B3 | Deploy Delta Sync Vector Search index on `chunked_docs` | P0 | IP | You | 1–2h | B2 | Index is online/synced and queryable with relevant retrieval results |
 | B4 | Configure Agent Bricks Knowledge Assistant on indexed corpus | P0 | NS | You | 1h | B3 | KA build completes successfully for selected corpus |
 | B5 | Validate citations/guardrails on KA responses (+ fallback smoke test) | P1 | NS | You | 1h | B4 | Citations are human-verifiable and fallback path is documented/minimally validated |
 
@@ -121,23 +121,22 @@
 
 ---
 
-## Daily Gates (Timeline Reset: start 2026-03-26)
+## Current Status & Next Gates (as of 2026-03-29)
 
-### Thu 2026-03-26
-- Focus: A1–A5, B1–B2
-- Gate: Bronze/Silver stable + initial Gold draft queryable
+### Completed to Date
+- **A0–A6:** DONE (Bronze/Silver/Gold pipeline + DQ + end-to-end validation)
+- **B1:** DONE (5 locked CDC/WHO docs landed)
+- **B2:** DONE (parse/chunk complete: 5 raw docs, 1,785 chunks, 5 distinct docs)
 
-### Fri 2026-03-27
-- Focus: A6, B3–B5, C1–C3
-- Gate: Dashboard answers demo analytics questions from Gold data + KA endpoint returns cited responses
+### Next Critical Path (P0)
+1. **B3:** Create/validate Delta Sync Vector Search index on `chunked_docs`
+2. **B4:** Configure/build Agent Bricks Knowledge Assistant on indexed corpus
+3. **B5:** Validate citations/guardrails (+ fallback smoke test)
+4. **C1–C3:** Build/reconcile dashboard views tied to 3 demo questions
+5. **D1–D3, E1–E3, F1–F4:** Two-lane demo flow, lean eval thresholds, final dry run
 
-### Sat 2026-03-28
-- Focus: D1–D4, E1–E4, F1
-- Gate: Agent quality near/at thresholds with remediation list closed or minor-only
-
-### Sun 2026-03-29 (MVP Functional Target)
-- Focus: E5, F2–F4
-- Gate: End-to-end demo-ready system + runbook + eval evidence
+### MVP Gate (Current)
+- **Gate to declare end-to-end MVP ready:** B3–B5 complete, dashboard reconciled, eval thresholds met, and final dry run passes without major issues.
 
 ---
 
@@ -154,7 +153,8 @@
 
 | Date | Workstream | Blocker | Impact | Mitigation | Status |
 |---|---|---|---|---|---|
-| 2026-03-26 | — | Timeline reset: execution starts from A) Data Pipeline with all tasks at NS | 1-day schedule compression | Prioritize P0 tasks only; defer all P1 unless ahead of schedule | Open |
+| 2026-03-26 | A–F | Timeline reset and compressed schedule | Reduced slack for stretch work | Protected-core sequencing and strict P0-first prioritization | Mitigated |
+| 2026-03-29 | B | Recursive chunking runtime spike during B2 run | Delayed B2 validation cycle | Applied performance-safe recursive chunking hotfix; rerun completed successfully | Resolved |
 
 ---
 

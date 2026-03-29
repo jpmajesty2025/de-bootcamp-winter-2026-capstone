@@ -604,9 +604,28 @@ Define a **Protected Core Scope** that must survive any scope cut before 2026-03
 - **B2 chunking strategy update + performance hotfix (2026-03-28):**
   - Switched from simple fixed sliding-window chunking to recursive separator-aware chunking (`["\\n\\n", "\\n", ". ", " ", ""]`) while retaining target settings (`chunk_size=400`, `chunk_overlap=60`).
   - Initial recursive implementation produced long runtime behavior during Databricks execution; hotfix applied to avoid quadratic list-front pops and to use a fast fixed-window fallback for unsplittable long segments.
-  - Post-hotfix local syntax validation passed for `src/08_parse_and_chunk_docs.py`; Databricks rerun pending for final B2 completion evidence.
+  - Post-hotfix local syntax validation passed for `src/08_parse_and_chunk_docs.py`.
+- **B2 Databricks rerun result (2026-03-29):**
+  - Manifest read successfully from docs volume.
+  - Successful landed docs in manifest: **5**
+  - Raw docs rows written: **5** (`bootcamp_students.health_equity_capstone_jpmajesty2019.raw_docs`)
+  - Chunked docs rows written: **1,785** (`bootcamp_students.health_equity_capstone_jpmajesty2019.chunked_docs`)
+  - Distinct docs in chunks: **5**
+  - **B2 status: COMPLETE**
 - **Idempotency confirmation (B2 tables):**
   - Writes to `CHUNKED_DOCS_TABLE` and `RAW_DOCS_TABLE` use `.mode("overwrite").option("overwriteSchema","true").saveAsTable(...)`.
   - Therefore, rerunning `src/08_parse_and_chunk_docs.py` replaces prior snapshots for those tables (no duplicate accumulation from repeat runs under this full-refresh pattern).
+- **B3 kickoff progress (2026-03-29):**
+  - Added Vector Search config constants in `src/config.py`:
+    - `VS_ENDPOINT_NAME`
+    - `VS_INDEX_NAME`
+    - `VS_EMBEDDING_MODEL_ENDPOINT`
+  - Created `src/09_create_vector_index.py` to:
+    - enable CDF on `chunked_docs`
+    - create/verify Vector Search endpoint (idempotent)
+    - create/verify Delta Sync index on `chunked_docs` (idempotent, `chunk_id` PK, `chunk_text` embedding source)
+    - poll index status until no longer provisioning/building
+  - Local syntax check passed for `src/config.py` and `src/09_create_vector_index.py`.
+- **Next focus:** run `src/09_create_vector_index.py` in Databricks and capture endpoint/index readiness evidence.
 
 

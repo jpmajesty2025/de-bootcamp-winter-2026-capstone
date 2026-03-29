@@ -25,6 +25,10 @@ GOLD_DQ_SUMMARY_TABLE = f"{CATALOG}.{SCHEMA}.dq_gold_validation_summary"
 RAW_DOCS_TABLE = f"{CATALOG}.{SCHEMA}.raw_docs"
 CHUNKED_DOCS_TABLE = f"{CATALOG}.{SCHEMA}.chunked_docs"
 
+VS_ENDPOINT_NAME = "health_equity_vs_endpoint"
+VS_INDEX_NAME = f"{CATALOG}.{SCHEMA}.cdc_who_docs_index"
+VS_EMBEDDING_MODEL_ENDPOINT = "databricks-gte-large-en"
+
 CDC_PLACES_SOURCE_PATH = f"/Volumes/{CATALOG}/{SCHEMA}/cdc_places/"
 ACS_SOURCE_PATH = f"/Volumes/{CATALOG}/{SCHEMA}/census_acs/"
 CDC_PLACES_SOURCE_FILE="cdc_places.csv"
