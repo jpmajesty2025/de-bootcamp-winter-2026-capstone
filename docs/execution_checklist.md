@@ -63,8 +63,8 @@
 | B1 | Land locked 5 CDC/WHO source docs into Unity Catalog Volume (with fallbacks) | P0 | DONE | You | 2–3h | None | All 5 sources landed and tracked in UC Volume |
 | B2 | Parse and chunk locked docs into Delta tables (`raw_docs`, `chunked_docs`) | P0 | DONE | You | 1–2h | B1 | Run completes with 5 raw docs + chunked rows written and distinct doc coverage confirmed |
 | B3 | Deploy Delta Sync Vector Search index on `chunked_docs` | P0 | DONE | You | 1–2h | B2 | Index is online/synced and queryable with relevant retrieval results |
-| B4 | Configure Agent Bricks Knowledge Assistant on indexed corpus | P0 | IP | You | 1h | B3 | KA build completes successfully for selected corpus |
-| B5 | Validate citations/guardrails on KA responses (+ fallback smoke test) | P1 | NS | You | 1h | B4 | Citations are human-verifiable and fallback path is documented/minimally validated |
+| B4 | Configure Agent Bricks Knowledge Assistant on indexed corpus | P0 | DONE | You | 1h | B3 | KA build completes successfully; endpoint is serving |
+| B5 | Validate citations/guardrails on KA responses (+ fallback smoke test) | P1 | DONE | You | 1h | B4 | Citations verified; safety and abstention checks pass; fallback retrieval path documented |
 
 ---
 
@@ -125,18 +125,16 @@
 
 ### Completed to Date
 - **A0–A6:** DONE (Bronze/Silver/Gold pipeline + DQ + end-to-end validation)
-- **B1:** DONE (5 locked CDC/WHO docs landed)
-- **B2:** DONE (parse/chunk complete: 5 raw docs, 1,785 chunks, 5 distinct docs)
+- **B1–B5:** DONE (docs landed, parsed/chunked, Vector Search online, KA deployed, citations/safety/abstention validated)
 
 ### Next Critical Path (P0)
-1. **B3:** Create/validate Delta Sync Vector Search index on `chunked_docs`
-2. **B4:** Configure/build Agent Bricks Knowledge Assistant on indexed corpus
-3. **B5:** Validate citations/guardrails (+ fallback smoke test)
-4. **C1–C3:** Build/reconcile dashboard views tied to 3 demo questions
-5. **D1–D3, E1–E3, F1–F4:** Two-lane demo flow, lean eval thresholds, final dry run
+1. **C1–C3:** Build/reconcile dashboard views tied to the 3 demo questions
+2. **D1–D3:** Finalize two-lane demo flow (Genie structured lane + KA document lane)
+3. **E1–E3:** Run lean evaluation and confirm threshold gates
+4. **F1–F4:** Demo script, backup artifacts, runbook, and final timed dry run
 
 ### MVP Gate (Current)
-- **Gate to declare end-to-end MVP ready:** B3–B5 complete, dashboard reconciled, eval thresholds met, and final dry run passes without major issues.
+- **Gate to declare end-to-end MVP ready:** dashboard reconciled, two-lane demo flow stable, eval thresholds met, and final dry run passes without major issues.
 
 ---
 

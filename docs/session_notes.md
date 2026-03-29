@@ -630,7 +630,12 @@ Define a **Protected Core Scope** that must survive any scope cut before 2026-03
   - Workaround used: replace malformed cell content with manual copy/paste from local file.
 - **Engineering guardrails codified (2026-03-29):**
   - Added `docs/engineering_guardrails.md` as a default operating standard for idempotency-by-default, retry-safe infra patterns, and senior engineering quality gates across data/backend/software work.
-- **Execution status update:** B4 moved to `IP` in `docs/execution_checklist.md`.
-- **Next focus:** execute B4 in Databricks UI (build Knowledge Assistant on `bootcamp_students.health_equity_capstone_jpmajesty2019.cdc_who_docs_index`) and capture build/endpoint evidence.
+- **Execution status update (2026-03-29):** Track B (B1–B5) is complete in practice and in checklist tracking.
+- **B4/B5 evidence summary:**
+  - Assistant deployed: `health-equity-assistant` (endpoint: `ka-37b81bfb-endpoint`).
+  - In-scope validation: intervention-focused questions answered with citations to CDC/WHO sources.
+  - Out-of-scope safety: medication dosage question correctly refused with safe redirection.
+  - No-evidence/abstention: 2026 Nevada county policy question correctly identified as unsupported by corpus.
+- **Next focus:** Track C Dashboard (C1–C3) — finalize KPI shortlist mapped to the 3 demo questions, build views, and reconcile against Gold tables.
 
 
