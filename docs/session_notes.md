@@ -592,5 +592,14 @@ Define a **Protected Core Scope** that must survive any scope cut before 2026-03
   - Successful downloads: **5**
   - Failed downloads: **0**
 - **Execution status update:** B1 is complete in practice; next focus is B2 (parse/chunk docs for Vector Search index preparation).
+- **B2 kickoff progress (2026-03-28):**
+  - Added `src/08_parse_and_chunk_docs.py` to parse landed docs and produce:
+    - `raw_docs` (document-level parsed text)
+    - `chunked_docs` (chunk-level records for vector indexing)
+  - Added table constants in `src/config.py`: `RAW_DOCS_TABLE`, `CHUNKED_DOCS_TABLE`.
+  - Script supports PDF parsing via `ai_parse_document` with fallback and HTML text extraction.
+  - Idempotent write strategy: overwrite snapshots for both raw/chunked tables.
+  - Updated `docs/execution_checklist.md`: B2 moved from `NS` to `IP`.
+  - Local syntax check passed for `src/08_parse_and_chunk_docs.py`.
 
 
