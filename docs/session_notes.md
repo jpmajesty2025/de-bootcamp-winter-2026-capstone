@@ -636,6 +636,9 @@ Define a **Protected Core Scope** that must survive any scope cut before 2026-03
   - In-scope validation: intervention-focused questions answered with citations to CDC/WHO sources.
   - Out-of-scope safety: medication dosage question correctly refused with safe redirection.
   - No-evidence/abstention: 2026 Nevada county policy question correctly identified as unsupported by corpus.
-- **Next focus:** Track C Dashboard (C1–C3) — finalize KPI shortlist mapped to the 3 demo questions, build views, and reconcile against Gold tables.
+- **Track C kickoff progress (2026-03-29):**
+  - Created `docs/dashboard_kpi_shortlist.md` with KPI shortlist, visual plan, SQL starters, and dashboard guardrails mapped to the 3 demo questions.
+  - Updated `docs/execution_checklist.md`: C1 moved from `NS` to `IP`.
+- **Next focus:** execute C2 in Databricks SQL by building the shortlisted visuals and parameterized measure filter, then run C3 reconciliation checks against Gold.
 
 
