@@ -61,10 +61,10 @@
 | ID | Task | Priority | Status | Owner | Estimate | Depends On | Done Criteria |
 |---|---|---|---|---|---|---|---|
 | B1 | Land locked 5 CDC/WHO source docs into Unity Catalog Volume (with fallbacks) | P0 | DONE | You | 2–3h | None | All 5 sources landed and tracked in UC Volume |
-| B2 | Configure Agent Bricks Knowledge Assistant source and build | P0 | IP | You | 1–2h | B1 | KA build completes successfully for selected corpus |
-| B3 | Deploy/verify KA serving endpoint for document Q&A | P0 | NS | You | 1–2h | B2 | Endpoint is queryable and returns grounded responses |
-| B4 | Validate citations/guardrails on KA responses | P0 | NS | You | 1h | B3 | Citations are human-verifiable and guardrails behave as expected |
-| B5 | Fallback path smoke test: notebook-based citation RAG over Vector Search | P1 | NS | You | 1h | B1 | Fallback path documented and minimally validated |
+| B2 | Parse and chunk locked docs into Delta tables (`raw_docs`, `chunked_docs`) | P0 | DONE | You | 1–2h | B1 | Run completes with 5 raw docs + chunked rows written and distinct doc coverage confirmed |
+| B3 | Deploy Delta Sync Vector Search index on `chunked_docs` | P0 | NS | You | 1–2h | B2 | Index is online/synced and queryable with relevant retrieval results |
+| B4 | Configure Agent Bricks Knowledge Assistant on indexed corpus | P0 | NS | You | 1h | B3 | KA build completes successfully for selected corpus |
+| B5 | Validate citations/guardrails on KA responses (+ fallback smoke test) | P1 | NS | You | 1h | B4 | Citations are human-verifiable and fallback path is documented/minimally validated |
 
 ---
 

@@ -601,5 +601,12 @@ Define a **Protected Core Scope** that must survive any scope cut before 2026-03
   - Idempotent write strategy: overwrite snapshots for both raw/chunked tables.
   - Updated `docs/execution_checklist.md`: B2 moved from `NS` to `IP`.
   - Local syntax check passed for `src/08_parse_and_chunk_docs.py`.
+- **B2 chunking strategy update + performance hotfix (2026-03-28):**
+  - Switched from simple fixed sliding-window chunking to recursive separator-aware chunking (`["\\n\\n", "\\n", ". ", " ", ""]`) while retaining target settings (`chunk_size=400`, `chunk_overlap=60`).
+  - Initial recursive implementation produced long runtime behavior during Databricks execution; hotfix applied to avoid quadratic list-front pops and to use a fast fixed-window fallback for unsplittable long segments.
+  - Post-hotfix local syntax validation passed for `src/08_parse_and_chunk_docs.py`; Databricks rerun pending for final B2 completion evidence.
+- **Idempotency confirmation (B2 tables):**
+  - Writes to `CHUNKED_DOCS_TABLE` and `RAW_DOCS_TABLE` use `.mode("overwrite").option("overwriteSchema","true").saveAsTable(...)`.
+  - Therefore, rerunning `src/08_parse_and_chunk_docs.py` replaces prior snapshots for those tables (no duplicate accumulation from repeat runs under this full-refresh pattern).
 
 

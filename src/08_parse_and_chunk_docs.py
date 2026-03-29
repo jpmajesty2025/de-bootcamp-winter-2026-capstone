@@ -44,26 +44,123 @@ def strip_html_to_text(html_content: str) -> str:
     return text
 
 
-def split_chunks(text: str, chunk_size: int = CHUNK_SIZE, overlap: int = CHUNK_OVERLAP) -> List[str]:
+def split_chunks(
+    text: str,
+    chunk_size: int = CHUNK_SIZE,
+    overlap: int = CHUNK_OVERLAP,
+    separators: List[str] = CHUNK_SEPARATORS,
+) -> List[str]:
     if not text:
         return []
 
-    chunks: List[str] = []
-    start = 0
-    text_len = len(text)
+    overlap = max(0, min(overlap, chunk_size - 1))
 
-    while start < text_len:
-        end = min(start + chunk_size, text_len)
-        chunk = text[start:end].strip()
-        if chunk:
-            chunks.append(chunk)
+    def fixed_window_chunks(segment: str) -> List[str]:
+        segment = segment.strip()
+        if not segment:
+            return []
+        if len(segment) <= chunk_size:
+            return [segment]
 
-        if end == text_len:
-            break
+        chunks: List[str] = []
+        step = chunk_size - overlap
+        start = 0
+        while start < len(segment):
+            end = min(start + chunk_size, len(segment))
+            chunk = segment[start:end].strip()
+            if chunk:
+                chunks.append(chunk)
+            if end == len(segment):
+                break
+            start += step
+        return chunks
 
-        start = max(0, end - overlap)
+    def merge_splits(splits: List[str], separator: str) -> List[str]:
+        from collections import deque
 
-    return chunks
+        docs: List[str] = []
+        window = deque()
+        window_len = 0
+        sep_len = len(separator)
+
+        def append_window() -> None:
+            if not window:
+                return
+            chunk = separator.join(window).strip()
+            if chunk:
+                docs.append(chunk)
+
+        for split in splits:
+            split = split.strip()
+            if not split:
+                continue
+
+            add_len = len(split) if not window else sep_len + len(split)
+
+            if window and (window_len + add_len) > chunk_size:
+                append_window()
+
+                while window and window_len > overlap:
+                    removed = window.popleft()
+                    window_len -= len(removed)
+                    if window:
+                        window_len -= sep_len
+
+                add_len = len(split) if not window else sep_len + len(split)
+
+            window.append(split)
+            window_len += add_len
+
+        append_window()
+        return docs
+
+    def recursive_split(segment: str, active_separators: List[str]) -> List[str]:
+        segment = segment.strip()
+        if not segment:
+            return []
+        if len(segment) <= chunk_size:
+            return [segment]
+
+        separator = ""
+        next_separators: List[str] = []
+
+        for idx, candidate in enumerate(active_separators):
+            if candidate == "":
+                separator = ""
+                next_separators = []
+                break
+            if candidate in segment:
+                separator = candidate
+                next_separators = active_separators[idx + 1 :]
+                break
+
+        if separator == "":
+            return fixed_window_chunks(segment)
+
+        pieces = [p.strip() for p in segment.split(separator) if p and p.strip()]
+        short_pieces: List[str] = []
+        chunks: List[str] = []
+
+        for piece in pieces:
+            if len(piece) <= chunk_size:
+                short_pieces.append(piece)
+                continue
+
+            if short_pieces:
+                chunks.extend(merge_splits(short_pieces, separator))
+                short_pieces = []
+
+            if next_separators:
+                chunks.extend(recursive_split(piece, next_separators))
+            else:
+                chunks.extend(fixed_window_chunks(piece))
+
+        if short_pieces:
+            chunks.extend(merge_splits(short_pieces, separator))
+
+        return chunks
+
+    return recursive_split(text, separators)
 
 
 def parse_pdf_with_ai(path: str) -> str:
