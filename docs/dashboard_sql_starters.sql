@@ -102,9 +102,10 @@ FROM bootcamp_students.health_equity_capstone_jpmajesty2019.gold_health_equity_s
 GROUP BY measure_id, poverty_band, health_burden_band
 ORDER BY measure_id, poverty_band, health_burden_band;
 
--- C2.5 VISUAL (proxy): Community income bands vs outcomes
+-- C2.5 modified: VISUAL (proxy): Community income bands vs outcomes (filter-ready via measure_id)
 WITH county_proxy AS (
   SELECT
+    measure_id,
     county_fips,
     state_abbr,
     county_name,
@@ -117,15 +118,15 @@ WITH county_proxy AS (
       ELSE 'higher_income_proxy'
     END AS community_income_proxy
   FROM bootcamp_students.health_equity_capstone_jpmajesty2019.gold_health_equity_stats
-  WHERE measure_id IN ('DIABETES', 'OBESITY', 'BPHIGH')
 )
 SELECT
+  measure_id,
   community_income_proxy,
   AVG(data_value) AS avg_outcome_value,
   COUNT(*) AS row_count
 FROM county_proxy
-GROUP BY community_income_proxy
-ORDER BY community_income_proxy;
+GROUP BY measure_id, community_income_proxy
+ORDER BY measure_id, community_income_proxy;
 
 -- =========================================================
 -- C3 Reconciliation checks (dashboard vs gold)

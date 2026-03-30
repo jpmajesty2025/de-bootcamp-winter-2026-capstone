@@ -638,7 +638,7 @@ Define a **Protected Core Scope** that must survive any scope cut before 2026-03
   - No-evidence/abstention: 2026 Nevada county policy question correctly identified as unsupported by corpus.
 - **Track C progress update (2026-03-29):**
   - Created `docs/dashboard_kpi_shortlist.md`, `docs/dashboard_sql_starters.sql`, and `docs/dashboard_build_runbook.md`.
-  - C2 dashboard queries were made filter-ready (including C2.2 top-10-per-measure window ranking fix).
+  - C2 dashboard queries were made filter-ready (including C2.2 top-10-per-measure window ranking fix and C2.5 measure-aware filtering by removing hardcoded measure list).
   - C2.3 visualization tuning: switched from dense scatter to a heatmap for readability at county-level point density; retained measure-level filtering for interpretability.
   - C2 and C3 result exports captured under `docs/dashboard_sql_starters_results/`.
   - Reconciliation checks passed:
