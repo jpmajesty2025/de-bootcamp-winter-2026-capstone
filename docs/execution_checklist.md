@@ -73,8 +73,8 @@
 | ID | Task | Priority | Status | Owner | Estimate | Depends On | Done Criteria |
 |---|---|---|---|---|---|---|---|
 | C1 | Final KPI/visual shortlist mapped to 3 demo questions | P0 | DONE | You | 45m | A4 | KPI list approved and query-backed |
-| C2 | Build dashboard views (burden, SDOH association, rural/urban) | P0 | IP | You | 2–3h | C1 | Core views implemented and filterable |
-| C3 | Reconcile dashboard numbers vs gold tables | P0 | NS | You | 1h | C2 | No major contradictions |
+| C2 | Build dashboard views (burden, SDOH association, rural/urban) | P0 | DONE | You | 2–3h | C1 | Core views implemented and filterable |
+| C3 | Reconcile dashboard numbers vs gold tables | P0 | DONE | You | 1h | C2 | No major contradictions |
 | C4 | Demo-ready polish (labels, filters, readability) | P1 | NS | You | 45m | C3 | Dashboard understandable in <2 min walkthrough |
 
 ---
@@ -83,7 +83,7 @@
 
 | ID | Task | Priority | Status | Owner | Estimate | Depends On | Done Criteria |
 |---|---|---|---|---|---|---|---|
-| D1 | Implement two-lane query path (Genie for structured, KA for document evidence) | P0 | NS | You | 1–2h | B3, C3 | Routing/usage pattern is clear and testable in demo flow |
+| D1 | Implement two-lane query path (Genie for structured, KA for document evidence) | P0 | IP | You | 1–2h | B3, C3 | Routing/usage pattern is clear and testable in demo flow |
 | D2 | Enforce citation-grounded document answers via KA | P0 | NS | You | 1h | D1, B4 | Document-lane responses include relevant citations |
 | D3 | 3 demo questions + paraphrase test pass across lanes | P0 | NS | You | 1h | D2, C3 | Acceptable answer quality across variants and both lanes |
 | D4 | Verify abstention behavior for weak/unsupported evidence | P1 | NS | You | 45m | D2 | System clearly abstains when support is insufficient |
@@ -126,12 +126,13 @@
 ### Completed to Date
 - **A0–A6:** DONE (Bronze/Silver/Gold pipeline + DQ + end-to-end validation)
 - **B1–B5:** DONE (docs landed, parsed/chunked, Vector Search online, KA deployed, citations/safety/abstention validated)
+- **C1–C3:** DONE (KPI shortlist finalized, dashboard queries/visuals built, reconciliation checks passed)
 
 ### Next Critical Path (P0)
-1. **C1–C3:** Build/reconcile dashboard views tied to the 3 demo questions
-2. **D1–D3:** Finalize two-lane demo flow (Genie structured lane + KA document lane)
-3. **E1–E3:** Run lean evaluation and confirm threshold gates
-4. **F1–F4:** Demo script, backup artifacts, runbook, and final timed dry run
+1. **D1–D3:** Finalize two-lane demo flow (Genie structured lane + KA document lane)
+2. **E1–E3:** Run lean evaluation and confirm threshold gates
+3. **F1–F4:** Demo script, backup artifacts, runbook, and final timed dry run
+4. **C4:** Dashboard polish (labels, filter UX, readability)
 
 ### MVP Gate (Current)
 - **Gate to declare end-to-end MVP ready:** dashboard reconciled, two-lane demo flow stable, eval thresholds met, and final dry run passes without major issues.

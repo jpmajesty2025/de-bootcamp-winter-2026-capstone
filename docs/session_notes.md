@@ -636,15 +636,15 @@ Define a **Protected Core Scope** that must survive any scope cut before 2026-03
   - In-scope validation: intervention-focused questions answered with citations to CDC/WHO sources.
   - Out-of-scope safety: medication dosage question correctly refused with safe redirection.
   - No-evidence/abstention: 2026 Nevada county policy question correctly identified as unsupported by corpus.
-- **Track C progress update (2026-03-29):**
-  - Created `docs/dashboard_kpi_shortlist.md` with KPI shortlist, visual plan, SQL starters, and dashboard guardrails mapped to the 3 demo questions.
-  - Created `docs/dashboard_sql_starters.sql` with copy/paste-ready C2 visual queries and C3 reconciliation checks.
-  - Updated C2 datasets for dashboard global filtering:
-    - C2.2 modified to include `measure_id` and remove hardcoded single-measure filtering.
-    - C2.2 further updated to enforce true top-10-per-measure via `ROW_NUMBER() OVER (PARTITION BY measure_id ORDER BY data_value DESC)` and `WHERE rn <= 10`, resolving Databricks dashboard/Genie filter behavior.
-    - C2.3 modified to include `measure_id` and remove hardcoded single-measure filtering.
-    - C2.4 modified to include `measure_id` grouping for measure-aware filtering.
-  - Updated `docs/execution_checklist.md`: C1 moved to `DONE`; C2 moved to `IP`.
-- **Next focus:** continue C2 dashboard wiring in Databricks (global `measure_id` filter + visuals), then execute C3 reconciliation checks and capture evidence.
+- **Track C completion update (2026-03-29):**
+  - Created `docs/dashboard_kpi_shortlist.md`, `docs/dashboard_sql_starters.sql`, and `docs/dashboard_build_runbook.md`.
+  - C2 dashboard queries were made filter-ready (including C2.2 top-10-per-measure window ranking fix).
+  - C2 and C3 result exports captured under `docs/dashboard_sql_starters_results/`.
+  - Reconciliation checks passed:
+    - C3.1 rowcount + county coverage validated
+    - C3.2 key-field null checks = 0
+    - C3.3 aggregate spot-check aligned with prior Gold validation benchmarks
+  - Updated `docs/execution_checklist.md`: C2 and C3 moved to `DONE`.
+- **Next focus:** Track D (D1–D3) — implement and validate the two-lane demo flow (Genie for structured analytics + KA for document evidence).
 
 
