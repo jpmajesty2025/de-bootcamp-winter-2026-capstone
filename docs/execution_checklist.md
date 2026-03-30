@@ -83,7 +83,7 @@
 
 | ID | Task | Priority | Status | Owner | Estimate | Depends On | Done Criteria |
 |---|---|---|---|---|---|---|---|
-| D1 | Implement two-lane query path (Genie for structured, KA for document evidence) | P0 | IP | You | 1–2h | B3, C3 | Routing/usage pattern is clear and testable in demo flow |
+| D1 | Implement two-lane query path (Genie for structured, KA for document evidence) | P0 | NS | You | 1–2h | B3, C3 | Routing/usage pattern is clear and testable in demo flow |
 | D2 | Enforce citation-grounded document answers via KA | P0 | NS | You | 1h | D1, B4 | Document-lane responses include relevant citations |
 | D3 | 3 demo questions + paraphrase test pass across lanes | P0 | NS | You | 1h | D2, C3 | Acceptable answer quality across variants and both lanes |
 | D4 | Verify abstention behavior for weak/unsupported evidence | P1 | NS | You | 45m | D2 | System clearly abstains when support is insufficient |
