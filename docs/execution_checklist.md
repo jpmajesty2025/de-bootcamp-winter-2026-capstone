@@ -73,7 +73,7 @@
 | ID | Task | Priority | Status | Owner | Estimate | Depends On | Done Criteria |
 |---|---|---|---|---|---|---|---|
 | C1 | Final KPI/visual shortlist mapped to 3 demo questions | P0 | DONE | You | 45m | A4 | KPI list approved and query-backed |
-| C2 | Build dashboard views (burden, SDOH association, rural/urban) | P0 | DONE | You | 2–3h | C1 | Core views implemented and filterable |
+| C2 | Build dashboard views (burden, SDOH association, rural/urban) | P0 | IP | You | 2–3h | C1 | Core views implemented and filterable |
 | C3 | Reconcile dashboard numbers vs gold tables | P0 | DONE | You | 1h | C2 | No major contradictions |
 | C4 | Demo-ready polish (labels, filters, readability) | P1 | NS | You | 45m | C3 | Dashboard understandable in <2 min walkthrough |
 
@@ -126,13 +126,15 @@
 ### Completed to Date
 - **A0–A6:** DONE (Bronze/Silver/Gold pipeline + DQ + end-to-end validation)
 - **B1–B5:** DONE (docs landed, parsed/chunked, Vector Search online, KA deployed, citations/safety/abstention validated)
-- **C1–C3:** DONE (KPI shortlist finalized, dashboard queries/visuals built, reconciliation checks passed)
+- **C1:** DONE (KPI shortlist finalized and query-backed)
+- **C3:** DONE (reconciliation checks passed and evidence exported)
 
 ### Next Critical Path (P0)
-1. **D1–D3:** Finalize two-lane demo flow (Genie structured lane + KA document lane)
-2. **E1–E3:** Run lean evaluation and confirm threshold gates
-3. **F1–F4:** Demo script, backup artifacts, runbook, and final timed dry run
-4. **C4:** Dashboard polish (labels, filter UX, readability)
+1. **C2:** Finish dashboard visual build/wiring (C2.3, C2.4, optional C2.5) with global `measure_id` filtering
+2. **C4:** Dashboard polish (labels, filter UX, readability)
+3. **D1–D3:** Finalize two-lane demo flow (Genie structured lane + KA document lane)
+4. **E1–E3:** Run lean evaluation and confirm threshold gates
+5. **F1–F4:** Demo script, backup artifacts, runbook, and final timed dry run
 
 ### MVP Gate (Current)
 - **Gate to declare end-to-end MVP ready:** dashboard reconciled, two-lane demo flow stable, eval thresholds met, and final dry run passes without major issues.

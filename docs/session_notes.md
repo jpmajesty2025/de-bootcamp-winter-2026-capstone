@@ -636,15 +636,16 @@ Define a **Protected Core Scope** that must survive any scope cut before 2026-03
   - In-scope validation: intervention-focused questions answered with citations to CDC/WHO sources.
   - Out-of-scope safety: medication dosage question correctly refused with safe redirection.
   - No-evidence/abstention: 2026 Nevada county policy question correctly identified as unsupported by corpus.
-- **Track C completion update (2026-03-29):**
+- **Track C progress update (2026-03-29):**
   - Created `docs/dashboard_kpi_shortlist.md`, `docs/dashboard_sql_starters.sql`, and `docs/dashboard_build_runbook.md`.
   - C2 dashboard queries were made filter-ready (including C2.2 top-10-per-measure window ranking fix).
+  - C2.3 visualization tuning: switched from dense scatter to a heatmap for readability at county-level point density; retained measure-level filtering for interpretability.
   - C2 and C3 result exports captured under `docs/dashboard_sql_starters_results/`.
   - Reconciliation checks passed:
     - C3.1 rowcount + county coverage validated
     - C3.2 key-field null checks = 0
     - C3.3 aggregate spot-check aligned with prior Gold validation benchmarks
-  - Updated `docs/execution_checklist.md`: C2 and C3 moved to `DONE`.
-- **Next focus:** Track D (D1–D3) — implement and validate the two-lane demo flow (Genie for structured analytics + KA for document evidence).
+  - Updated `docs/execution_checklist.md`: C3 is `DONE`; C2 remains `IP` pending final dashboard visual wiring/polish.
+- **Next focus:** complete C2/C4 dashboard build and polish, then proceed to Track D (D1–D3) for two-lane demo validation.
 
 
